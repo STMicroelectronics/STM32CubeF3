@@ -44,9 +44,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32373c_eval.h" 
-#include "../Components/hx8347g/hx8347g.h"   
-#include "../Components/ili9328/ili9328.h"   
-#include "../../../Utilities/Fonts/fonts.h"   
+#include "../Components/hx8347i/hx8347i.h"
+#include "../Components/hx8347g/hx8347g.h"
+#include "../Components/ili9328/ili9328.h"
+#include "../../../Utilities/Fonts/fonts.h"
 
 /** @addtogroup BSP
   * @{
@@ -110,8 +111,8 @@ typedef struct
 typedef enum
 {
   CENTER_MODE             = 0x01,    /*!< Center mode */
-  RIGHT_MODE              = 0x02,    /*!< Right mode  */     
-  LEFT_MODE               = 0x03     /*!< Left mode   */                                                                              
+  RIGHT_MODE              = 0x02,    /*!< Right mode  */
+  LEFT_MODE               = 0x03     /*!< Left mode   */
 }Line_ModeTypdef;
 
 /**

@@ -186,6 +186,11 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/hx8347g/hx8347g.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/BSP/Components/hx8347i.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/hx8347i/hx8347i.c</locationURI>
+		</link>
+		<link>
 			<name>Drivers/BSP/Components/ili9328.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/ili9328/ili9328.c</locationURI>

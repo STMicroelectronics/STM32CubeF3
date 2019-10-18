@@ -6,45 +6,21 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics International N.V. 
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without 
-  * modification, are permitted, provided that the following conditions are met:
-  *
-  * 1. Redistribution of source code must retain the above copyright notice, 
-  *    this list of conditions and the following disclaimer.
-  * 2. Redistributions in binary form must reproduce the above copyright notice,
-  *    this list of conditions and the following disclaimer in the documentation
-  *    and/or other materials provided with the distribution.
-  * 3. Neither the name of STMicroelectronics nor the names of other 
-  *    contributors to this software may be used to endorse or promote products 
-  *    derived from this software without specific written permission.
-  * 4. This software, including modifications and/or derivative works of this 
-  *    software, must execute solely and exclusively on microcontroller or
-  *    microprocessor devices manufactured by or for STMicroelectronics.
-  * 5. Redistribution and use of this software other than as permitted under 
-  *    this license is void and will automatically terminate your rights under 
-  *    this license. 
-  *
-  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
-  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
-  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
-  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
-  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
-  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usbd_hid.h"
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 #define USB_DISCONNECT_PORT                 GPIOB
@@ -90,7 +66,7 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(USB_DISCONNECT_PORT, &GPIO_InitStruct); 
+  HAL_GPIO_Init(USB_DISCONNECT_PORT, &GPIO_InitStruct);
 
   /* Enable USB FS Clock */
   __HAL_RCC_USB_CLK_ENABLE();
@@ -102,13 +78,13 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
   /*USB interrupt remapping enable */
   __HAL_REMAPINTERRUPT_USB_ENABLE();
 #endif
-  
+
   if (hpcd->Init.low_power_enable == 1)
   {
     /* Enable EXTI Line 18 for USB wakeup */
     __HAL_USB_WAKEUP_EXTI_CLEAR_FLAG();
     __HAL_USB_WAKEUP_EXTI_ENABLE_RISING_EDGE();
-    __HAL_USB_WAKEUP_EXTI_ENABLE_IT();  
+    __HAL_USB_WAKEUP_EXTI_ENABLE_IT();
 
 #if defined (USE_USB_INTERRUPT_DEFAULT)
     /* USB Default Wakeup Interrupt */
@@ -116,16 +92,16 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
 
     /* Enable USB Wake-up interrupt */
     HAL_NVIC_SetPriority(USBWakeUp_IRQn, 0, 0);
-    
+
 #elif defined (USE_USB_INTERRUPT_REMAPPED)
-    
+
     /* USB Remapped Wakeup Interrupt */
-    HAL_NVIC_EnableIRQ(USBWakeUp_RMP_IRQn); 
-    
+    HAL_NVIC_EnableIRQ(USBWakeUp_RMP_IRQn);
+
     /* Enable USB Wake-up interrupt */
     HAL_NVIC_SetPriority(USBWakeUp_RMP_IRQn, 0, 0);
 #endif
-    
+
   }
 #if defined (USE_USB_INTERRUPT_DEFAULT)
 
@@ -134,13 +110,13 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
 
   /* Enable USB FS Interrupt */
   HAL_NVIC_EnableIRQ(USB_LP_CAN_RX0_IRQn);
-  
+
 #elif defined (USE_USB_INTERRUPT_REMAPPED)
   /* Set USB Remapped FS Interrupt priority */
   HAL_NVIC_SetPriority(USB_LP_IRQn, 0x0F, 0);
-  
+
   /* Enable USB FS Interrupt */
-  HAL_NVIC_EnableIRQ(USB_LP_IRQn); 
+  HAL_NVIC_EnableIRQ(USB_LP_IRQn);
 #endif
 }
 
@@ -309,7 +285,6 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
   /* Set LL Driver parameters */
   hpcd.Instance = USB;
   hpcd.Init.dev_endpoints = 8;
-  hpcd.Init.ep0_mps = PCD_EP0MPS_64;
   hpcd.Init.phy_itface = PCD_PHY_EMBEDDED;
   hpcd.Init.speed = PCD_SPEED_FULL;
   hpcd.Init.low_power_enable = 1;
@@ -522,7 +497,7 @@ void USBD_LL_Delay(uint32_t Delay)
   */
 void *USBD_static_malloc(uint32_t size)
 {
-  static uint32_t mem[MAX_STATIC_ALLOC_SIZE];
+  static uint32_t mem[sizeof(USBD_HID_HandleTypeDef) / 4 + 1];
   return mem;
 }
 
@@ -563,7 +538,7 @@ static void SystemClockConfig_STOP(void)
 {
   RCC_OscInitTypeDef        RCC_OscInitStruct;
   RCC_ClkInitTypeDef        RCC_ClkInitStruct;
-  
+
   /* Enable HSE Oscillator and activate PLL with HSE as source */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -573,7 +548,7 @@ static void SystemClockConfig_STOP(void)
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
   HAL_RCC_OscConfig(&RCC_OscInitStruct);
 
-  /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2 
+  /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2
   clocks dividers */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;

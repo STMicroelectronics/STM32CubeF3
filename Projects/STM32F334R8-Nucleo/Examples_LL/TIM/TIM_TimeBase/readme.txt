@@ -7,38 +7,24 @@
   * @author  MCD Application Team
   * @brief   Description of the TIM_TimeBase example.
   ******************************************************************************
+  * @attention
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   @endverbatim
 
 @par Example Description
 
-This example shows how to configure the TIM peripheral to generate a time base; 
-Example using the STM32F3xx TIM LL API, 
-peripheral initialization done using LL unitary services functions
-for optimization purpose (performance and size).
+Configuration of the TIM peripheral to generate a timebase. This 
+example is based on the STM32F3xx TIM LL API. The peripheral initialization 
+uses LL unitary service functions for optimization purposes (performance and size).
 
 In this example TIM2 input clock (TIM2CLK)  is set to APB1 clock (PCLK1),
 since APB1 prescaler is equal to 1.
@@ -52,22 +38,22 @@ PSC = (SystemCoreClock /10 KHz) - 1
 
 SystemCoreClock is set to 64 MHz for STM32F3xx Devices.
 
-The auto-reload (ARR) is calculated to get a time base period of 100ms,
-meaning that initial time base frequency is 10 Hz.
-ARR = (TIM2 counter clock / time base frequency) - 1
+The auto-reload (ARR) is calculated to get a timebase period of 100ms,
+meaning that initial timebase frequency is 10 Hz.
+ARR = (TIM2 counter clock / timebase frequency) - 1
 ARR = (TIM2 counter clock / 10) - 1
 
 Update interrupts are enabled. Within the update interrupt service routine, pin PA.05
 (connected to LED2 on board STM32F334R8-Nucleo Rev C) is toggled. So the period of 
-blinking of LED2 = 2 * time base period.
+blinking of LED2 = 2 * timebase period.
 
-User push-button can be used to modify the time base period from 100 ms
+User push-button can be used to modify the timebase period from 100 ms
 to 1 s in 100 ms steps. To do so, every time User push-button is pressed, the
 autoreload register (ARR) is updated. In up-counting update event is generated 
 at each counter overflow (when the counter reaches the auto-reload value). 
 
-Finally the time base frequency is calculated as follows:
-time base frequency = TIM2 counter clock /((PSC + 1)*(ARR + 1)*(RCR + 1))
+Finally the timebase frequency is calculated as follows:
+timebase frequency = TIM2 counter clock /((PSC + 1)*(ARR + 1)*(RCR + 1))
 
 @par Directory contents 
 

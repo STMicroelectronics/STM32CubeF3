@@ -7,42 +7,29 @@
   * @author  MCD Application Team
   * @brief   Description of CRC operation including user updates on generating polynomial.
   ******************************************************************************
+  * @attention
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   @endverbatim
 
 @par Example Description 
 
-This example provides a description of how to use CRC peripheral through 
-the STM32F3xx CRC HAL & LL API (LL API used for performance improvement);
-The CRC (Cyclic Redundancy Check) calculation unit computes a 8-bit long 
-CRC code of a given buffer of 32-bit data words, based on a user-defined generating polynomial; 
-In this example, the polynomial is first set manually to 0x9B that is X^8 + X^7 + X^4 + X^3 + X + 1;
-Then, in a second step, generating polynomial value and length are updated (set to 0x1021 that is
-X^16 + X^12 + X^5 + 1), for new CRC calculation;
-These updates are performed using CRC LL API.
+How to use the CRC peripheral through the STM32F3xx CRC HAL and LL API.
+The LL API is used for performance improvement. The CRC calculation unit
+computes the 8-bit CRC code of a given buffer of 32-bit data words, based on
+a user-defined generating polynomial. In this example, the polynomial is first
+set manually to 0x9B (X^8 + X^7 + X^4 + X^3 + X + 1).
+In a second step, the generating polynomial value and length are updated and
+set to 0x1021  (X^16 + X^12 + X^5 + 1) for a new CRC calculation.
+These updates are performed using the CRC LL API.
 
 At the beginning of the main program the HAL_Init() function is called to reset 
 all the peripherals, initialize the Flash interface and the systick.

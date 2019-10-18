@@ -9,41 +9,25 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   @endverbatim
 
 @par Example Description
 
-This application shows how to use the USB device application based on the Human Interface (HID).
+Use of the USB device application based on the Human Interface (HID).
 
 This is a typical example on how to use the USB peripheral in Device mode with HID class V1.11
 following the "Device Class Definition for Human Interface Devices (HID) Version 1.11
-Jun 27, 2001". The example is built around the USB device library and emulate the joystick by moving 
-the host mouse pointer horizontally.
+Jun 27, 2001".  The example is built around the USB device library in order to emulate the Mouse directions
+using User button.
 
 This example supports the remote wakeup feature (the ability to bring the USB suspended bus back
 to the active condition), and the User push-button is used as the remote wakeup source.
@@ -66,7 +50,7 @@ function to configure the system clock (SYSCLK) to run at 72 MHz. The Full Speed
 internally a 48-MHz clock, which is generated from an integrated PLL.
 
 It is possible to remappe the USB interrupts (USB_LP and USB_WKUP) on interrupt lines 75 and 76.
-User can select USB line Interrupt through macro defined in main.h. 
+User can select USB line Interrupt through macro defined in main.h.
 (USE_USB_INTERRUPT_DEFAULT and USE_USB_INTERRUPT_REMAPPED)
 
 @note The application needs to ensure that the SysTick time base is set to 1 millisecond
@@ -80,11 +64,11 @@ User can select USB line Interrupt through macro defined in main.h.
       a peripheral ISR process, then the SysTick interrupt must have higher priority (numerically lower)
       than the peripheral interrupt. Otherwise the caller ISR process will be blocked.
       To change the SysTick interrupt priority you have to use HAL_NVIC_SetPriority() function.
-	  
-@note The build-in USB peripheral of the STM32F3x does not provide a specific interrupt for USB cable plug/unplug 
+
+@note The build-in USB peripheral of the STM32F3x does not provide a specific interrupt for USB cable plug/unplug
       detection. The correct way to detect the USB cable plug/unplug is to detect the availability of the VBUS line
 	  using a normal GPIO pin (external interrupt line).
-	  
+
 @par Directory contents
 
   - USB_Device/HID_Standalone/Src/main.c                  Main program
@@ -107,12 +91,12 @@ User can select USB line Interrupt through macro defined in main.h.
     and development board.
 
   - STM32F303RE-Nucleo Rev C Set-up
-      - Since there is no USB 2.0 Full speed connector (Type B) on the nucleo board, user has to make 
-      his own USB shield daughter board with the a USB connector and plug it on top of the CN8 and CN9 
+      - Since there is no USB 2.0 Full speed connector (Type B) on the nucleo board, user has to make
+      his own USB shield daughter board with the a USB connector and plug it on top of the CN8 and CN9
       connectors of the STM32F303RE-Nucleo Rev C board. The USB connector has to be connected to the USB device associated GPIOs
       as follows:
-       - DP (D+ of the USB connector) <======> PA12 (Nucleo board)
-       - DM (D- of the USB connector) <======> PA11 (Nucleo board)
+       - DP (D+ of the USB connector) <======> PA12( pin12 in CN10 ) (Nucleo board)
+       - DM (D- of the USB connector) <======> PA11( pin14 in CN10 ) (Nucleo board)
       - External USB 1.5k  resistor pull-ups is required on the USB D+ Line and VDD (3V3).
       - To improve EMC performance (noise immunity and signal integrity), it is recommended to connect a 100nF
       ceramic capacitor to the USB VDD pin.

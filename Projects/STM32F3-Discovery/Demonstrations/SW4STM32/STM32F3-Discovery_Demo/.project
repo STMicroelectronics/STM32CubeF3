@@ -146,6 +146,11 @@
 			<locationURI>PARENT-5-PROJECT_LOC/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c</locationURI>
 		</link>
 		<link>
+			<name>Libraries/STM32F3xx_HAL_Driver/stm32f3xx_ll_usb.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_usb.c</locationURI>
+		</link>
+		<link>
 			<name>Middlewares/STM32_USBD_Library/Class/usbd_hid.c</name>
 			<type>1</type>
 			<locationURI>PARENT-5-PROJECT_LOC/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c</locationURI>

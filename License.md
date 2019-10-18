@@ -1,7 +1,7 @@
 | Component                       | License              | Copyright |
 |:---------                       |:-------              |:----------|
-| CMSIS                           | BSD-3-Clause         | Copyright (c) 2009-2017 ARM Limited. All rights reserved. |
-| CMSIS Device                    | BSD-3-Clause         | ARM Limited - STMicroelectronics |
+| CMSIS                           | Apache License 2.0   | Copyright (c) 2009-2017 ARM Limited. All rights reserved. |
+| CMSIS Device                    | Apache License 2.0   | ARM Limited - STMicroelectronics |
 | STM32F3 HAL                     | BSD-3-Clause         | STMicroelectronics |
 | BSP STM32F3-Discovery           | BSD-3-Clause         | STMicroelectronics |
 | BSP STM32F3xx_Nucleo_32         | BSD-3-Clause         | STMicroelectronics |

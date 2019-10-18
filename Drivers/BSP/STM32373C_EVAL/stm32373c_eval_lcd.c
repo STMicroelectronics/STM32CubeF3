@@ -155,7 +155,11 @@ uint8_t BSP_LCD_Init(void)
     lcd_drv = &hx8347g_drv;
     ret = LCD_OK;
   }
-  
+  else if((hx8347i_drv.ReadID() & 0x00FF) == HX8347I_ID)
+  {
+    lcd_drv = &hx8347i_drv;
+    ret = LCD_OK;
+  }
 
   if(ret != LCD_ERROR)
   {
@@ -349,7 +353,7 @@ void BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *pText, Line_
   }
   
   /* Send the string character by character on lCD */
-  while ((*pText != 0) & (((BSP_LCD_GetXSize() - (counter*DrawProp.pFont->Width)) & 0xFFFF) >= DrawProp.pFont->Width))
+  while ((*pText != 0) && (((BSP_LCD_GetXSize() - (counter*DrawProp.pFont->Width)) & 0xFFFF) >= DrawProp.pFont->Width))
   {
     /* Display one character on LCD */
     BSP_LCD_DisplayChar(refcolumn, Ypos, *pText);
@@ -667,11 +671,17 @@ void BSP_LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *pBmp)
   
   /* Read bitmap height */
   height = *(uint16_t *) (pBmp + 22);
-  height |= (*(uint16_t *) (pBmp + 24)) << 16; 
-  
-  /* Remap Ypos, hx8347g works with inverted X in case of bitmap */
+  height |= (*(uint16_t *) (pBmp + 24)) << 16;
+
+  /* Remap Xpos, ili9328 works with inverted X in case of bitmap */
+  if(lcd_drv == &ili9328_drv)
+  {
+      Xpos = BSP_LCD_GetXSize() - Xpos - width;
+  }  
+
+  /* Remap Ypos, hx8347g and hx8347i work with inverted Y in case of bitmap */
   /* X = 0, cursor is on Bottom corner */
-  if(lcd_drv == &hx8347g_drv)
+  if((lcd_drv == &hx8347g_drv) || (lcd_drv == &hx8347i_drv))
   {
     Ypos = BSP_LCD_GetYSize() - Ypos - height;
   }

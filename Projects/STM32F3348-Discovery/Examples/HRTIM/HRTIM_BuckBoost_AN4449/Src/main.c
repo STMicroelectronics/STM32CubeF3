@@ -1,38 +1,22 @@
 /**
-******************************************************************************
-* @file    HRTIM/HRTIM_BuckBoost_AN4449/Src/main.c 
-* @author  MCD Application Team
-* @brief   This example describes the Buck/Boost converter application of 
-*          STM32F334 Discovery
-******************************************************************************
-* @attention
-*
-* <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
-*
-* Redistribution and use in source and binary forms, with or without modification,
-* are permitted provided that the following conditions are met:
-*   1. Redistributions of source code must retain the above copyright notice,
-*      this list of conditions and the following disclaimer.
-*   2. Redistributions in binary form must reproduce the above copyright notice,
-*      this list of conditions and the following disclaimer in the documentation
-*      and/or other materials provided with the distribution.
-*   3. Neither the name of STMicroelectronics nor the names of its contributors
-*      may be used to endorse or promote products derived from this software
-*      without specific prior written permission.
-*
-* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*
-******************************************************************************
-*/
+  ******************************************************************************
+  * @file    HRTIM/HRTIM_BuckBoost_AN4449/Src/main.c 
+  * @author  MCD Application Team
+  * @brief   This example describes the Buck/Boost converter application of 
+  *          STM32F334 Discovery
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
+  ******************************************************************************
+  */
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -143,7 +127,7 @@ int main(void)
 #if defined(DEBUG)
   /* Enable Timer D interrupt */
   /* Timer D is here dedicated to observe ADC trigger event on TD1 (for debug purpose only) */
-  HAL_HRTIM_WaveformCounterStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_D);
+  HAL_HRTIM_WaveformCountStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_D);
 #endif //DEBUG
 
   HAL_Delay(100);
@@ -556,7 +540,7 @@ static void SetHRTIM_IdleMode(void)
   HAL_HRTIM_WaveformOutputConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, HRTIM_OUTPUT_TB2, &output_config);
 
   /* Start both HRTIM TIMER A, B and D*/
-  HAL_HRTIM_WaveformCounterStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
+  HAL_HRTIM_WaveformCountStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
   Mode = BUCKBOOST_MODE_IDLE;
 }
 
@@ -598,7 +582,7 @@ void SetHRTIM_BuckMode(void)
   HAL_HRTIM_WaveformOutputConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, HRTIM_OUTPUT_TB2, &output_config);
 
   /* Start both HRTIM TIMER A, B and D */
-  HAL_HRTIM_WaveformCounterStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
+  HAL_HRTIM_WaveformCountStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
   __HAL_HRTIM_SETCOMPARE(&hhrtim, HRTIM_TIMERINDEX_TIMER_A, HRTIM_COMPAREUNIT_1, BUCK_PWM_PERIOD / 2);// Duty cycle update
   Mode = BUCKBOOST_MODE_BUCK;
 }
@@ -641,7 +625,7 @@ void SetHRTIM_BoostMode(void)
   HAL_HRTIM_WaveformOutputConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_A, HRTIM_OUTPUT_TA2, &output_config);
 
   /* Start both HRTIM TIMER A and B */
-  HAL_HRTIM_WaveformCounterStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
+  HAL_HRTIM_WaveformCountStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
   __HAL_HRTIM_SETCOMPARE(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, HRTIM_COMPAREUNIT_1,  BUCK_PWM_PERIOD / 2);// Duty cycle update
   Mode = BUCKBOOST_MODE_BOOST;
 }
@@ -681,7 +665,7 @@ void SetHRTIM_MixedMode(void)
   HAL_HRTIM_WaveformOutputConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, HRTIM_OUTPUT_TB2, &output_config);
 
   /* Start both HRTIM TIMER A, B and D */
-  HAL_HRTIM_WaveformCounterStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
+  HAL_HRTIM_WaveformCountStart_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
   __HAL_HRTIM_SETCOMPARE(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, HRTIM_COMPAREUNIT_2, BUCK_PWM_PERIOD / 4);// Duty cycle update
   Mode = BUCKBOOST_MODE_MIXED;
 }
@@ -954,7 +938,7 @@ static void Reset_PI(void)
   Int_term_Buck = 0;
   Int_term_Boost = 0;
   Int_term_Mixed = 0;
-  /* Reset Counters Min and Max */
+  /* Reset CountS Min and Max */
   CTMax = 0;
   CTMin = 0;
   /* Set Proportional and Integral constant terms*/
@@ -971,7 +955,7 @@ static void StopConverter(Led_TypeDef LEDactive)
 {
   /* This function is used whenever the converter is overloaded or when the appropriate Vin conditions are not applied */
   HAL_HRTIM_WaveformOutputStop(&hhrtim, HRTIM_OUTPUT_TA1 | HRTIM_OUTPUT_TA2 | HRTIM_OUTPUT_TB1 | HRTIM_OUTPUT_TB2 | HRTIM_OUTPUT_TD1 | HRTIM_OUTPUT_TD2);
-  HAL_HRTIM_WaveformCounterStop_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
+  HAL_HRTIM_WaveformCountStop_IT(&hhrtim, HRTIM_TIMERID_TIMER_A | HRTIM_TIMERID_TIMER_B | HRTIM_TIMERID_TIMER_D);
   /* All LEDs OFF except active LED */
   BSP_LED_Off(LED3);
   BSP_LED_Off(LED4);
@@ -1008,7 +992,7 @@ static void Error_Handler(void)
 * @param  line: assert_param error line source number
 * @retval None
 */
-void assert_failed(char* file, uint32_t line)
+void assert_failed(uint8_t* file, uint32_t line)
 {
   /* User can add his own implementation to report the file name and line number,
   ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

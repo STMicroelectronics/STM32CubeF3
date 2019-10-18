@@ -1,46 +1,33 @@
 /**
-  @page TIM_Asymetric TIM Asymetric example
+  @page TIM_Asymetric TIM asymetric example
   
   @verbatim
   ******************** (C) COPYRIGHT 2016 STMicroelectronics *******************
   * @file    TIM/TIM_Asymetric/readme.txt 
   * @author  MCD Application Team
-  * @brief   TIM Asymetric Example Description.
+  * @brief   TIM asymetric Example Description.
   ******************************************************************************
+  * @attention
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   @endverbatim
 
 @par Example Description 
 
-This example shows how to configure the TIM peripheral to generate an Asymetric signal.
-TIM8 is configured to generate an Asymetric signal with a programmable Phase-Shifted signal on TIM8_CH2:
-   - TIM8 Channel 1 is configured in PWM2 mode
-   - TIM8 Channel 2 is configured in Asymetric PWM2 mode
-   - The counter mode is center aligned mode
-   - The pulse length and the phase shift are programmed consecutively in TIM8_CCR2 and TIM8_CCR1.
+Configuration of the TIM peripheral to generate an asymmetric signal.
+TIM8 is configured to generate an asymmetric signal with a programmable phase-shifted signal on TIM8_CH2.
+TIM8 Channel 1 is configured in PWM2 mode.
+TIM8 Channel 2 is configured in Asymmetric PWM2 mode.
+The counter mode is center aligned.
+The pulse length and the phase shift are programmed consecutively in TIM8_CCR2 and TIM8_CCR1.
 
 TIM1 is configured to generating the reference signal on Channel1 used by TIM8:
    - TIM1 is generating a PWM signal with frequency equal to 1.6363 KHz.
@@ -54,7 +41,7 @@ TIM8 is generating a signal with the following caracteristics:
   - Pulse lenght = (TIM8_CCR1 + TIM8_CCR2) / TIM8_CLK
   - Phase shift = TIM8_CCR2/TIM8_CLK
  with TIM8_CLK = (SystemCoreClock / (Period + 1)), as the prescaler is equal to zero. 
- The Pulse is low level of the output signal of Channel 2 because TIM cannel is configured as Asymetric PWM2 mode.
+ The Pulse is low level of the output signal of Channel 2 because TIM cannel is configured as asymetric PWM2 mode.
 
 @note Care must be taken when using HAL_Delay(), this function provides accurate delay (in milliseconds)
       based on variable incremented in SysTick ISR. This implies that if HAL_Delay() is called from

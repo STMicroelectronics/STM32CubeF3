@@ -504,6 +504,11 @@
               <FileType>1</FileType>
               <FilePath>../../../../../../Drivers/BSP/Components/hx8347g/hx8347g.c</FilePath>
             </File>
+            <File>
+              <FileName>hx8347i.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/hx8347i/hx8347i.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

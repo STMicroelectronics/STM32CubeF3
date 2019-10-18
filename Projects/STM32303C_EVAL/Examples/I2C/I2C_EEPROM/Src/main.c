@@ -18,29 +18,13 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -61,7 +45,7 @@
 #define EEPROM_ADDRESS             0xA4    /* EEPROM M24M01-HR Address  */
 #define EEPROM_PAGESIZE            128     /* EEPROM M24M01-HR used     */
 #define EEPROM_LONG_TIMEOUT        1000    /* Long Timeout 1s */
-
+#define EEPROM_MAX_TRIALS          300
 /* When using M24M01-HR set TIMING to 0x00C4092A to reach 1 MHz speed */
 /* (Rise time = 26ns, Fall time = 2ns) */
 #define EEPROM_TIMING              0x00C4092A
@@ -101,6 +85,8 @@ static void Error_Handler(void);
   */
 int main(void)
 {
+  uint32_t Memory_Write_Trials = 0;
+  uint32_t Memory_Read_Trials = 0;
   /* STM32F3xx HAL library initialization:
        - Configure the Flash prefetch
        - Systick timer is configured by default as source of time base, but user 
@@ -150,13 +136,26 @@ int main(void)
   /* Since page size is 128 bytes, the write procedure will be done in a loop */
   while(Remaining_Bytes > 0)
   {
-    /* Write EEPROM_PAGESIZE */
-    if(HAL_I2C_Mem_Write_DMA(&I2cHandle , (uint16_t)EEPROM_ADDRESS, Memory_Address, I2C_MEMADD_SIZE_16BIT, (uint8_t*)(aTxBuffer + Memory_Address), EEPROM_PAGESIZE)!= HAL_OK)
+    do
     {
-      /* Writing process Error */
-      Error_Handler();
+      /* Write EEPROM_PAGESIZE */
+      if (HAL_I2C_Mem_Write_DMA(&I2cHandle , (uint16_t)EEPROM_ADDRESS, Memory_Address, I2C_MEMADD_SIZE_16BIT, (uint8_t*)(aTxBuffer + Memory_Address), EEPROM_PAGESIZE)!= HAL_OK)
+      {
+      	if (HAL_I2C_GetError(&I2cHandle) != HAL_I2C_ERROR_AF)
+      	{
+          /* Writing process Error */
+          Error_Handler();
+        }
+      }
+      
+      /* Increment Trials */
+      Memory_Write_Trials++;
     }
-
+    while((Memory_Write_Trials < EEPROM_MAX_TRIALS) && (HAL_I2C_GetError(&I2cHandle) == HAL_I2C_ERROR_AF));
+    
+    /* Clear Trials */
+    Memory_Write_Trials = 0;
+    
     /* Wait for the end of the transfer */
     /*  Before starting a new communication transfer, you need to check the current
       state of the peripheral; if it’s busy you need to wait for the end of current
@@ -182,12 +181,25 @@ int main(void)
   }
 
   /*##-3- Start reading process ##############################################*/
-  if(HAL_I2C_Mem_Read_DMA(&I2cHandle , (uint16_t)EEPROM_ADDRESS, 0, I2C_MEMADD_SIZE_16BIT, (uint8_t*)aRxBuffer, RXBUFFERSIZE)!= HAL_OK)
+  do
   {
-    /* Reading process Error */
-    Error_Handler();
+    if(HAL_I2C_Mem_Read_DMA(&I2cHandle , (uint16_t)EEPROM_ADDRESS, 0, I2C_MEMADD_SIZE_16BIT, (uint8_t*)aRxBuffer, RXBUFFERSIZE)!= HAL_OK)
+    {
+      if (HAL_I2C_GetError(&I2cHandle) != HAL_I2C_ERROR_AF)
+      {
+        /* Reading process Error */
+        Error_Handler();
+      }
+    }
+    
+    /* Increment Trials */
+    Memory_Read_Trials++;
   }
-
+  while((Memory_Read_Trials < EEPROM_MAX_TRIALS) && (HAL_I2C_GetError(&I2cHandle) == HAL_I2C_ERROR_AF));
+  
+  /* Clear Trials */
+  Memory_Read_Trials = 0;
+  
   /* Wait for the end of the transfer */
   while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
   {
@@ -343,7 +355,7 @@ static uint16_t Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferL
   * @param  line: assert_param error line source number
   * @retval None
   */
-void assert_failed(char* file, uint32_t line)
+void assert_failed(uint8_t* file, uint32_t line)
 {
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

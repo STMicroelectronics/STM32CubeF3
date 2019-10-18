@@ -475,6 +475,11 @@
               <FilePath>..\..\..\..\..\..\Drivers\BSP\Components\hx8347g\hx8347g.c</FilePath>
             </File>
             <File>
+              <FileName>hx8347i.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\Drivers\BSP\Components\hx8347i\hx8347i.c</FilePath>
+            </File>
+            <File>
               <FileName>ili9328.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\..\Drivers\BSP\Components\ili9328\ili9328.c</FilePath>

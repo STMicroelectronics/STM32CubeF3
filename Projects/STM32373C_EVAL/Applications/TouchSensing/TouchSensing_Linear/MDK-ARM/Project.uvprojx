@@ -481,7 +481,10 @@
               <FileName>ili9328.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\..\Drivers\BSP\Components\ili9328\ili9328.c</FilePath>
-              
+            </File><File>
+              <FileName>hx8347i.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\Drivers\BSP\Components\hx8347i\hx8347i.c</FilePath>
             </File></Files>
         </Group><Group>
           <GroupName>Drivers/BSP/STM32373C_EVAL</GroupName>

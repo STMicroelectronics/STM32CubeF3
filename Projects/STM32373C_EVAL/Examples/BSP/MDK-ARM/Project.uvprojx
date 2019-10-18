@@ -505,6 +505,11 @@
               <FilePath>../../../../../Drivers/BSP/Components/hx8347g/hx8347g.c</FilePath>
             </File>
             <File>
+              <FileName>hx8347i.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../Drivers/BSP/Components/hx8347i/hx8347i.c</FilePath>
+            </File>
+            <File>
               <FileName>cs43l22.c</FileName>
               <FileType>1</FileType>
               <FilePath>../../../../../Drivers/BSP/Components/cs43l22/cs43l22.c</FilePath>

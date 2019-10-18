@@ -137,6 +137,10 @@
 			<type>1</type>
 			<location>PARENT-7-PROJECT_LOC/Drivers/BSP/Components/hx8347g/hx8347g.c</location>
 		</link><link>
+			<name>Drivers/BSP/Components/hx8347i.c</name>
+			<type>1</type>
+			<location>PARENT-7-PROJECT_LOC/Drivers/BSP/Components/hx8347i/hx8347i.c</location>
+		</link><link>
 			<name>Application/User/stmCriticalSection.c</name>
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Src/stmCriticalSection.c</location>

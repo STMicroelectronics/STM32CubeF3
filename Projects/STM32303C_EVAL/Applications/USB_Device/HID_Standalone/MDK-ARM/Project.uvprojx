@@ -591,6 +591,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\..\Drivers\STM32F3xx_HAL_Driver\Src\stm32f3xx_hal_spi_ex.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f3xx_ll_usb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\Drivers\STM32F3xx_HAL_Driver\Src\stm32f3xx_ll_usb.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

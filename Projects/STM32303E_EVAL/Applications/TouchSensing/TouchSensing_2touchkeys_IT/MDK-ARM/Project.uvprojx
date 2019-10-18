@@ -1,45 +1,41 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="project_proj.xsd">
 
-  <SchemaVersion>2.1</SchemaVersion>
+  <SchemaVersion>1.1</SchemaVersion>
 
   <Header>### uVision Project, (C) Keil Software</Header>
 
   <Targets>
-    <Target>
+  <Target> 
       <TargetName>STM32303E_EVAL</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F303VE</Device>
+          <Device>STM32F303VETx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F3xx_DFP.1.3.0</PackID>
-          <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IRAM(0x20000000-0x2000FFFF) IRAM2(0x10000000-0x10003FFF) IROM(0x08000000-0x807FFFF) CLOCK(72000000) CPUTYPE("Cortex-M4") FPU2</Cpu>
-          <FlashUtilSpec></FlashUtilSpec>
-          <StartupFile></StartupFile>
-          <FlashDriverDll></FlashDriverDll>
-          <DeviceId></DeviceId>
-          <RegisterFile></RegisterFile>
-          <MemoryEnv></MemoryEnv>
-          <Cmp></Cmp>
-          <Asm></Asm>
-          <Linker></Linker>
-          <OHString></OHString>
-          <InfinionOptionDll></InfinionOptionDll>
-          <SLE66CMisc></SLE66CMisc>
-          <SLE66AMisc></SLE66AMisc>
-          <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32F303VE$SVD\STM32F303xE.svd</SFDFile>
+          <Cpu>IROM(0x08000000-0x807FFFF) IRAM(0x20000000-0x2000FFFF) IRAM2(0x10000000-0x10003FFF) CLOCK(8000000) FPU2 CPUTYPE("Cortex-M4")</Cpu>
+          <FlashUtilSpec/>
+          <StartupFile/>
+          <FlashDriverDll/>
+          <DeviceId/>
+          <RegisterFile/>
+          <MemoryEnv/>
+          <Cmp/>
+          <Asm/>
+          <Linker/>
+          <OHString/>
+          <InfinionOptionDll/>
+          <SLE66CMisc/>
+          <SLE66AMisc/>
+          <SLE66LinkerMisc/>
+          <SFDFile/>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath></BinPath>
-          <IncludePath></IncludePath>
-          <LibPath></LibPath>
-          <RegisterFilePath></RegisterFilePath>
-          <DBRegisterFilePath></DBRegisterFilePath>
+          <BinPath/>
+          <IncludePath/>
+          <LibPath/>
+          <RegisterFilePath/>
+          <DBRegisterFilePath/>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -47,32 +43,30 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>STM32303E_EVAL\</OutputDirectory>
-          <OutputName>STM32303E_EVAL</OutputName>
+          <OutputDirectory>STM32303E_EVAL\Exe\</OutputDirectory>
+          <OutputName>Project</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath></ListingPath>
+          <ListingPath>STM32303E_EVAL\List</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <UserProg1Name/>
+            <UserProg2Name/>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopU1X>0</nStopU1X>
-            <nStopU2X>0</nStopU2X>
           </BeforeCompile>
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <UserProg1Name/>
+            <UserProg2Name/>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopB1X>0</nStopB1X>
@@ -81,15 +75,13 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <UserProg1Name/>
+            <UserProg2Name/>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopA1X>0</nStopA1X>
-            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
-          <SVCSIdString></SVCSIdString>
+          <SVCSIdString/>
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -103,9 +95,9 @@
           <AssembleAssemblyFile>0</AssembleAssemblyFile>
           <PublicsOnly>0</PublicsOnly>
           <StopOnExitCode>3</StopOnExitCode>
-          <CustomArgument></CustomArgument>
-          <IncludeLibraryModules></IncludeLibraryModules>
-          <ComprImg>0</ComprImg>
+          <CustomArgument/>
+          <IncludeLibraryModules/>
+          <ComprImg/>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
@@ -144,26 +136,26 @@
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
+            <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>1</RestoreTracepoints>
+            <RestoreTracepoints>1</RestoreTracepoints> 
             <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>11</TargetSelection>
+          <TargetSelection>13</TargetSelection>
           <SimDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
+            <CpuDll/>
+            <CpuDllArguments/>
+            <PeripheralDll/>
+            <PeripheralDllArguments/>
+            <InitializationFile/>
           </SimDlls>
           <TargetDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
+            <CpuDll/>
+            <CpuDllArguments/>
+            <PeripheralDll/>
+            <PeripheralDllArguments/>
+            <InitializationFile/>
             <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
           </TargetDlls>
         </DebugOption>
@@ -178,11 +170,11 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
-          <Flash3></Flash3>
-          <Flash4></Flash4>
-          <pFcarmOut></pFcarmOut>
-          <pFcarmGrp></pFcarmGrp>
-          <pFcArmRoot></pFcArmRoot>
+          <Flash3/>
+          <Flash4/>
+          <pFcarmOut/>
+          <pFcarmGrp/>
+          <pFcArmRoot/>
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -215,7 +207,7 @@
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M4"</AdsCpuType>
-            <RvctDeviceName></RvctDeviceName>
+            <RvctDeviceName/>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
@@ -224,13 +216,12 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>2</RvdsVP>
-            <hadIRAM2>1</hadIRAM2>
+            <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
             <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
-            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
@@ -283,13 +274,13 @@
               </Ocm6>
               <IRAM>
                 <Type>0</Type>
-                <StartAddress>0x20000000</StartAddress>
-                <Size>0x10000</Size>
+                <StartAddress/>
+                <Size/>
               </IRAM>
               <IROM>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
-                <Size>0x80000</Size>
+                <StartAddress/>
+                <Size/>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -313,8 +304,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
-                <Size>0x80000</Size>
+                <StartAddress/>
+                <Size/>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -338,16 +329,16 @@
               </OCR_RVCT8>
               <OCR_RVCT9>
                 <Type>0</Type>
-                <StartAddress>0x20000000</StartAddress>
-                <Size>0x10000</Size>
+                <StartAddress/>
+                <Size/>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
-                <StartAddress>0x10000000</StartAddress>
-                <Size>0x4000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </OCR_RVCT10>
             </OnChipMemories>
-            <RvctStartVector></RvctStartVector>
+            <RvctStartVector/>
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
@@ -363,17 +354,13 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
-            <v6Lang>0</v6Lang>
-            <v6LangP>0</v6LangP>
-            <vShortEn>0</vShortEn>
-            <vShortWch>0</vShortWch>
             <VariousControls>
-              <MiscControls>--C99</MiscControls>
+              <MiscControls/>
               <Define>USE_HAL_DRIVER,STM32F303xE,USE_STM32303E_EVAL</Define>
-              <Undefine></Undefine>
-              <IncludePath>../Inc;../../../../../../Drivers/CMSIS/Device/ST/STM32F3xx/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/STM32F3xx_HAL_Driver/Inc;../../../../../../Drivers/BSP/STM32303E_EVAL;../../../../../../Drivers/BSP/Components/Common;../../../../../../Utilities/Log;../../../../../../Utilities/CPU;../../../../../../Middlewares/ST/STM32_TouchSensing_Library/inc</IncludePath>
+              <Undefine/>
+              <IncludePath>../Inc;../../../../../../Drivers/CMSIS/Device/ST/STM32F3xx/Include;../../../../../../Drivers/STM32F3xx_HAL_Driver/Inc;../../../../../../Drivers/BSP/STM32303E_EVAL;../../../../../../Drivers/BSP/Components/Common;../../../../../../Utilities/Log;../../../../../../Utilities/CPU;../../../../../../Middlewares/ST/STM32_TouchSensing_Library/inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -384,13 +371,11 @@
             <SplitLS>0</SplitLS>
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
-            <uSurpInc>0</uSurpInc>
-            <useXO>0</useXO>
             <VariousControls>
-              <MiscControls></MiscControls>
-              <Define></Define>
-              <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <MiscControls/>
+              <Define/>
+              <Undefine/>
+              <IncludePath/>
             </VariousControls>
           </Aads>
           <LDads>
@@ -402,103 +387,22 @@
             <useFile>0</useFile>
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
-            <pXoBase></pXoBase>
-            <ScatterFile></ScatterFile>
-            <IncludeLibs></IncludeLibs>
-            <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6329</Misc>
-            <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings></DisabledWarnings>
+            <pXoBase/>
+            <ScatterFile/>
+            <IncludeLibs/>
+            <IncludeLibsPath/>
+            <Misc/>
+            <LinkerInputFile/>
+            <DisabledWarnings/>
           </LDads>
         </TargetArmAds>
-      </TargetOption>
+      </TargetOption>     
       <Groups>
-        <Group>
-          <GroupName>Middlewares/STM32_TouchSensing_Library</GroupName>
-          <Files>
-            <File>
-              <FileName>tsl_linrot.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_linrot.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_acq_tsc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_dxs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_filter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_filter.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_acq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_ecs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_touchkey.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_object.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_globals.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.c</FilePath>
-            </File>
-            <File>
-              <FileName>tsl_time.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.c</FilePath>
-            </File>
-          </Files>
+        
+		<Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
-        <Group>
-          <GroupName>Drivers/BSP/Components</GroupName>
-          <Files>
-            <File>
-              <FileName>spfd5408.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/spfd5408/spfd5408.c</FilePath>
-            </File>
-            <File>
-              <FileName>hx8347d.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/hx8347d/hx8347d.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application/MDK-ARM</GroupName>
-          <Files>
-            <File>
-              <FileName>startup_stm32f303xe.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>startup_stm32f303xe.s</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
+ <Group>
           <GroupName>Doc</GroupName>
           <Files>
             <File>
@@ -509,83 +413,8 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/STM32F3xx_HAL_Driver</GroupName>
-          <Files>
-            <File>
-              <FileName>stm32f3xx_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_tsc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tsc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_cortex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_uart_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_pwr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_spi_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_rcc_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f3xx_hal_pwr_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Application/User</GroupName>
           <Files>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/main.c</FilePath>
-            </File>
             <File>
               <FileName>stm32f3xx_it.c</FileName>
               <FileType>1</FileType>
@@ -597,24 +426,29 @@
               <FilePath>../Src/stmCriticalSection.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f3xx_hal_msp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/stm32f3xx_hal_msp.c</FilePath>
-            </File>
-            <File>
               <FileName>tsl_user.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/tsl_user.c</FilePath>
             </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/main.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/stm32f3xx_hal_msp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/CMSIS</GroupName>
-          <Files>
+          <GroupName>Application/MDK-ARM</GroupName>
+        <Files>
             <File>
-              <FileName>system_stm32f3xx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/system_stm32f3xx.c</FilePath>
+              <FileName>startup_stm32f303xe.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>startup_stm32f303xe.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -634,12 +468,164 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
+          <GroupName>Drivers/BSP/Components</GroupName>
+          <Files>
+            <File>
+              <FileName>hx8347d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/hx8347d/hx8347d.c</FilePath>
+            </File>
+            <File>
+              <FileName>spfd5408.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/spfd5408/spfd5408.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/STM32F3xx_HAL_Driver</GroupName>
+          <Files>
+            <File>
+              <FileName>stm32f3xx_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_cortex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_pwr_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_rcc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_spi_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_tsc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tsc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f3xx_hal_uart_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/CMSIS</GroupName>
+          <Files>
+            <File>
+              <FileName>system_stm32f3xx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/system_stm32f3xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/STM32_TouchSensing_Library</GroupName>
+          <Files>
+            <File>
+              <FileName>tsl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_acq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_acq_tsc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_dxs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_dxs.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_ecs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_ecs.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_filter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_filter.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_globals.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_linrot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_linrot.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_object.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsl_touchkey.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
+    	
     </Target>
   </Targets>
-
   <RTE>
     <apis/>
     <components>
@@ -652,5 +638,4 @@
     </components>
     <files/>
   </RTE>
-
 </Project>
