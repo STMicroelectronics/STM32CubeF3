@@ -13,6 +13,10 @@ The **STM32CubeF3 MCU Package** projects are directly running on the STM32F3 ser
 
 In this FW Package, the module **Middlewares/ST/STemWin** is not directly accessible. It must be downloaded from a ST server. The URL is available in a readme.txt file inside the module.
 
+## Release note
+
+Details about the content of this release are available in the release note [here](https://htmlpreview.github.io/?https://github.com/STMicroelectronics/STM32CubeF3/blob/master/Release_Notes.html).
+
 ## Boards available
   * STM32F3
     * [STM32303E-EVAL](https://www.st.com/en/product/stm32303e-eval.html)
