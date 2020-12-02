@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    stm32f3_discovery_gyroscope.h
   * @author  MCD Application Team
-  * @brief   This file contains definitions for stm32f3_discovery_gyroscope.c 
+  * @brief   This file contains definitions for stm32f3_discovery_gyroscope.c
   *          firmware driver.
   ******************************************************************************
   * @attention
@@ -33,7 +33,7 @@
   *
   ******************************************************************************
   */
-  
+
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F3_DISCOVERY_GYRO_H
@@ -46,34 +46,35 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f3_discovery.h"
 /* Include Gyroscope component driver */
-#include "../Components/l3gd20/l3gd20.h"   
+#include "../Components/l3gd20/l3gd20.h"
+#include "../Components/i3g4250d/i3g4250d.h"
 
 /** @addtogroup BSP
   * @{
   */
-  
+
 /** @addtogroup STM32F3_DISCOVERY
   * @{
-  */ 
+  */
 
 /** @addtogroup STM32F3_DISCOVERY_GYROSCOPE
   * @{
   */
-  
+
 /** @defgroup STM32F3_DISCOVERY_GYROSCOPE_Exported_Types Exported Types
   * @{
   */
-typedef enum 
+typedef enum
 {
   GYRO_OK = 0,
   GYRO_ERROR = 1,
   GYRO_TIMEOUT = 2
-} 
+}
 GYRO_StatusTypeDef;
 
 /**
   * @}
-  */ 
+  */
 
 /** @defgroup STM32F3_DISCOVERY_GYROSCOPE_Exported_Constants Exported Constants
   * @{
@@ -82,7 +83,7 @@ GYRO_StatusTypeDef;
 /**
   * @}
   */
-  
+
 /** @defgroup STM32F3_DISCOVERY_GYROSCOPE_Exported_Macros Exported Macros
   * @{
   */
@@ -90,11 +91,11 @@ GYRO_StatusTypeDef;
 /**
   * @}
   */
- 
+
 /** @defgroup STM32F3_DISCOVERY_GYROSCOPE_Exported_Functions  Exported Functions
   * @{
   */
-/* Sensor Configuration Functions */ 
+/* Sensor Configuration Functions */
 uint8_t BSP_GYRO_Init(void);
 void BSP_GYRO_Reset(void);
 uint8_t BSP_GYRO_ReadID(void);
@@ -117,12 +118,12 @@ void BSP_GYRO_GetXYZ(float* pfData);
 
 /**
   * @}
-  */ 
-  
+  */
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __STM32F3_DISCOVERY_GYRO_H */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/ 
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

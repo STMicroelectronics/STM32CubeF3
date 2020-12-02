@@ -40,23 +40,23 @@ static void Demo(void);
   * @brief  Main program.
   * @param  None
   * @retval None
-  */ 
+  */
 int main(void)
-{ 
+{
   /* STM32F3xx HAL library initialization:
        - Configure the Flash prefetch
-       - Systick timer is configured by default as source of time base, but user 
-         can eventually implement his proper time base source (a general purpose 
-         timer for example or other time source), keeping in mind that Time base 
-         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and 
+       - Systick timer is configured by default as source of time base, but user
+         can eventually implement his proper time base source (a general purpose
+         timer for example or other time source), keeping in mind that Time base
+         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and
          handled in milliseconds basis.
        - Set NVIC Group Priority to 4
        - Low Level Initialization
      */
   HAL_Init();
-  
-    /* Initialize LEDs and User_Button on STM32F3-Discovery ------------------*/
-  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI); 
+
+  /* Initialize LEDs and User_Button on STM32F3-Discovery ------------------*/
+  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
   BSP_LED_Init(LED4);
   BSP_LED_Init(LED3);
   BSP_LED_Init(LED5);
@@ -65,37 +65,47 @@ int main(void)
   BSP_LED_Init(LED10);
   BSP_LED_Init(LED8);
   BSP_LED_Init(LED6);
-  
+
   /* Configure the system clock to 72 Mhz */
   SystemClock_Config();
 
     /* Init USB Device Library */
   USBD_Init(&USBD_Device, &HID_Desc, 0);
-  
+
   /* Register the USB HID class */
   USBD_RegisterClass(&USBD_Device, &USBD_HID);
-  
+
   /* Start Device Process */
   USBD_Start(&USBD_Device);
-  
+
   /* Delay 1s to select USB Test Program or to go directly througt the demo*/
   HAL_Delay(1000);
-  
+
   if(BSP_PB_GetState(BUTTON_USER) == KEY_PRESSED)
   {
     /* Wait for User button is released */
     while(BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
     {
-    }   
+    }
     /* Wait for User button to be pressed to switch to USB Test
-    the cursor move in square path and led On corresponding to such direction  */
+    the cursor move in square path and led On corresponding to such direction */
     USB_Test();
   }
-  else
+
+  /* Gyroscope Mems Init -----------------------------------------------------*/
+  if(BSP_GYRO_Init() != HAL_OK)
   {
-    Demo();
+    /* Initialization Error */
+    Error_Handler();
   }
-  /* 5. End -------------------------------------*/
+
+  /* Accelerometer Mems Init -------------------------------------------------*/
+  if(BSP_ACCELERO_Init() != HAL_OK)
+  {
+    /* Initialization Error */
+    Error_Handler();
+  }
+
   /* Infinite loop */
   while (1)
   {
@@ -141,22 +151,17 @@ static void Demo(void)
   /* Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
   {}
-  
+
   /* 1. Gyroscope Mems Test -----------------------------------------------*/
-  if(BSP_GYRO_Init() != HAL_OK)
-  {
-    /* Initialization Error */
-    Error_Handler(); 
-  }
-  
+
   /* Wait for User button to be pressed */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_PRESSED)
   {
-    /* Move discovery kit to detect negative and positive acceleration values 
+    /* Move discovery kit to detect negative and positive acceleration values
     on X, Y axis for GYROSCOPE MEMS*/
     GYRO_MEMS_Test();
   }
-  
+
   /* Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
   {}
@@ -192,25 +197,20 @@ static void Demo(void)
   /* Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
   {}
-  
+
   /* 3. Accelerometer Mems Test --------------------------------------------*/
-  if(BSP_ACCELERO_Init() != HAL_OK)
-  {
-    /* Initialization Error */
-    Error_Handler(); 
-  }
-  
+
   /* Wait for User button to be pressed */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_PRESSED)
   {
-    /* Move discovery kit to detect negative and positive acceleration values 
+    /* Move discovery kit to detect negative and positive acceleration values
     on X, Y and Z axis for ACCELERATOR MEMS*/
     ACCELERO_MEMS_Test();
   }
   /* Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
   {}
-  
+
   /* 4. Wait for User button to be pressed -------------------------------------*/
   while (BSP_PB_GetState(BUTTON_USER) != KEY_PRESSED)
   {
@@ -239,26 +239,23 @@ static void Demo(void)
     BSP_LED_Toggle(LED6);
     HAL_Delay(20);
   }
-  
-  /* Force The Leds to be Off before entring to the USB demo  */   
+
+  /* Force The Leds to be Off before entring to the USB demo  */
   BSP_LED_Off(LED3);
+  BSP_LED_Off(LED4);
   BSP_LED_Off(LED5);
   BSP_LED_Off(LED7);
   BSP_LED_Off(LED9);
   BSP_LED_Off(LED10);
   BSP_LED_Off(LED8);
   BSP_LED_Off(LED6);
-  
+
   /* 5. Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
   {}
-  
-    /* GYROSCOPE Initialization Test --------------------------------------------*/
-  if(BSP_GYRO_Init() != HAL_OK)
-  {
-    /* Initialization Error */
-    Error_Handler(); 
-  }
+
+  /* 6. USB Test -------------------------------------------------------------*/
+
   /* Wait for User button to be pressed */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_PRESSED)
   {
@@ -266,7 +263,7 @@ static void Demo(void)
     Mouse cursor moving corresponding to board move direction  */
     USB_Demo();
   }
-  
+
   /* Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != KEY_NOT_PRESSED)
   {}
@@ -275,7 +272,7 @@ static void Demo(void)
 
 /**
   * @brief  System Clock Configuration
-  *         The system Clock is configured as follow : 
+  *         The system Clock is configured as follow :
   *            System Clock source            = PLL (HSE)
   *            SYSCLK(Hz)                     = 72000000
   *            HCLK(Hz)                       = 72000000
@@ -306,14 +303,14 @@ static void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  
+
   /* Configures the USB clock */
   HAL_RCCEx_GetPeriphCLKConfig(&RCC_PeriphClkInit);
   RCC_PeriphClkInit.USBClockSelection = RCC_USBCLKSOURCE_PLL_DIV1_5;
   HAL_RCCEx_PeriphCLKConfig(&RCC_PeriphClkInit);
-  
 
-  /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2 
+
+  /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2
      clocks dividers */
   RCC_ClkInitStruct.ClockType = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
