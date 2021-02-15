@@ -6345,11 +6345,12 @@ static void I2C_DMAAbort(DMA_HandleTypeDef *hdma)
 }
 
 /**
-  * @brief  This function handles I2C Communication Timeout.
+  * @brief This function handles I2C Communication Timeout.  It waits
+  *                until a flag is no longer in the specified status.
   * @param  hi2c Pointer to a I2C_HandleTypeDef structure that contains
   *                the configuration information for the specified I2C.
   * @param  Flag Specifies the I2C flag to check.
-  * @param  Status The new Flag status (SET or RESET).
+  * @param  Status The existing Flag status (SET or RESET).
   * @param  Timeout Timeout duration
   * @param  Tickstart Tick start value
   * @retval HAL status
