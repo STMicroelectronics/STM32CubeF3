@@ -600,6 +600,7 @@ ErrorStatus LL_ADC_CommonDeInit(ADC_Common_TypeDef *ADCxy_COMMON)
   #elif defined(ADC1) && defined(ADC2)
   LL_AHB1_GRP1_ForceReset  (LL_AHB1_GRP1_PERIPH_ADC12);
   #elif defined(ADC1)
+  (void)ADCxy_COMMON;
   LL_AHB1_GRP1_ForceReset  (LL_AHB1_GRP1_PERIPH_ADC1);
   #endif
   

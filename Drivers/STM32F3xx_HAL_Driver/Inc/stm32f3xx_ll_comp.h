@@ -723,6 +723,8 @@ __STATIC_INLINE void LL_COMP_SetCommonWindowMode(COMP_Common_TypeDef *COMPxy_COM
   /* Device without pair of comparator working in window mode */
   /* No update of comparator register (corresponds to setting                 */
   /* "LL_COMP_WINDOWMODE_DISABLE").                                           */
+  (void)COMPxy_COMMON;
+  (void)WindowMode;
 #endif
 }
 
@@ -746,6 +748,7 @@ __STATIC_INLINE uint32_t LL_COMP_GetCommonWindowMode(COMP_Common_TypeDef *COMPxy
 #if defined(COMP_CSR_COMPxWNDWEN)
   return (uint32_t)(READ_BIT(COMPxy_COMMON->CSR, COMP_CSR_COMPxWNDWEN));
 #else
+  (void)COMPxy_COMMON;
   /* Device without pair of comparator working in window mode */
   return (LL_COMP_WINDOWMODE_DISABLE);
 #endif
@@ -780,6 +783,8 @@ __STATIC_INLINE void LL_COMP_SetPowerMode(COMP_TypeDef *COMPx, uint32_t PowerMod
   /* Device without comparator power mode configurable */
   /* No update of comparator register (corresponds to setting                 */
   /* "LL_COMP_POWERMODE_HIGHSPEED").                                          */
+  (void)COMPx;
+  (void)PowerMode;
 #endif
 }
 
@@ -800,6 +805,7 @@ __STATIC_INLINE uint32_t LL_COMP_GetPowerMode(COMP_TypeDef *COMPx)
 #if defined(COMP_CSR_COMPxMODE)
   return (uint32_t)(READ_BIT(COMPx->CSR, COMP_CSR_COMPxMODE));
 #else
+  (void)COMPx;
   /* Device without comparator power mode configurable */
   return (LL_COMP_POWERMODE_HIGHSPEED);
 #endif
@@ -1031,6 +1037,8 @@ __STATIC_INLINE void LL_COMP_SetInputHysteresis(COMP_TypeDef *COMPx, uint32_t In
   /* Device without comparator input hysteresis */
   /* No update of comparator register (corresponds to setting                 */
   /* "LL_COMP_HYSTERESIS_NONE").                                              */
+  (void)COMPx;
+  (void)InputHysteresis;
 #endif
 }
 
@@ -1051,6 +1059,7 @@ __STATIC_INLINE uint32_t LL_COMP_GetInputHysteresis(COMP_TypeDef *COMPx)
 #if defined(COMP_CSR_COMPxHYST)
   return (uint32_t)(READ_BIT(COMPx->CSR, COMP_CSR_COMPxHYST));
 #else
+  (void)COMPx;
   /* Device without comparator input hysteresis */
   return (LL_COMP_HYSTERESIS_NONE);
 #endif
