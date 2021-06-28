@@ -946,6 +946,15 @@ static void I2SEx_TxRxDMACplt(DMA_HandleTypeDef *hdma)
       }
     }
   }
+  else if (hdma->Init.Mode == DMA_CIRCULAR)
+  {
+    /* Call user TxRx complete callback */
+#if (USE_HAL_I2S_REGISTER_CALLBACKS == 1U)
+    hi2s->TxRxCpltCallback(hi2s);
+#else
+    HAL_I2SEx_TxRxCpltCallback(hi2s);
+#endif /* USE_HAL_I2S_REGISTER_CALLBACKS */
+  }
 }
 
 /**
