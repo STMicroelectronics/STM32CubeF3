@@ -69,7 +69,6 @@
 			<type>1</type>
 			<location>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/l3gd20/l3gd20.c</location>
 		</link><link>
-		</link><link>
 			<name>Drivers/Components/i3g4250d.c</name>
 			<type>1</type>
 			<location>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/i3g4250d/i3g4250d.c</location>
@@ -114,7 +113,6 @@
 			<type>1</type>
 			<location>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/lsm303dlhc/lsm303dlhc.c</location>
 		</link><link>
-		</link><link>
 			<name>Drivers/Components/lsm303agr.c</name>
 			<type>1</type>
 			<location>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/lsm303agr/lsm303agr.c</location>
@@ -122,11 +120,6 @@
 			<name>Drivers/STM32F3xx_HAL_Driver/stm32f3xx_hal_dma.c</name>
 			<type>1</type>
 			<location>PARENT-6-PROJECT_LOC/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c</location>
-		</link>
-		<link>
-			<name />
-			<type />
-			<location />
 		</link>
 	</linkedResources>
 </projectDescription>

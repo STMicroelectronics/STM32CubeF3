@@ -78,11 +78,11 @@
 #define EEPROM_WIP_FLAG         0x01  /*!< Write In Progress (WIP) flag */
 
 /**
- * @brief STM32303C EVAL BSP Driver version number V2.1.2
+ * @brief STM32303C EVAL BSP Driver version number V2.1.3
    */
 #define __STM32303C_EVAL_BSP_VERSION_MAIN       (0x02) /*!< [31:24] main version */
 #define __STM32303C_EVAL_BSP_VERSION_SUB1       (0x01) /*!< [23:16] sub1 version */
-#define __STM32303C_EVAL_BSP_VERSION_SUB2       (0x02) /*!< [15:8]  sub2 version */
+#define __STM32303C_EVAL_BSP_VERSION_SUB2       (0x03) /*!< [15:8]  sub2 version */
 #define __STM32303C_EVAL_BSP_VERSION_RC         (0x00) /*!< [7:0]  release candidate */
 #define __STM32303C_EVAL_BSP_VERSION            ((__STM32303C_EVAL_BSP_VERSION_MAIN << 24)\
                                                 |(__STM32303C_EVAL_BSP_VERSION_SUB1 << 16)\

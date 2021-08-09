@@ -173,7 +173,7 @@ void DMA1_Channel5_IRQHandler(void)
 {
   if(LL_DMA_IsActiveFlag_TC2(DMA1) == 1)
   {
-    LL_DMA_ClearFlag_GI2(DMA1);
+    LL_DMA_ClearFlag_TC2(DMA1);
     TransferComplete_Callback();
   }
   else if(LL_DMA_IsActiveFlag_TE2(DMA1) == 1)
