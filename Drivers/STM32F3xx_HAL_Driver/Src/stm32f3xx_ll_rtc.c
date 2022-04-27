@@ -808,7 +808,7 @@ ErrorStatus LL_RTC_WaitForSynchro(RTC_TypeDef *RTCx)
 
   /* Wait the registers to be synchronised */
   tmp = LL_RTC_IsActiveFlag_RS(RTCx);
-  while ((timeout != 0U) && (tmp != 0U))
+  while ((timeout != 0U) && (tmp != 1U))
   {
     if (LL_SYSTICK_IsActiveCounterFlag() == 1U)
     {
