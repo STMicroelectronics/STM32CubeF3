@@ -10,13 +10,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -110,7 +109,7 @@ static uint32_t ubAdcGrpRegularSequenceConvCount = 0; /* Variable set into ADC i
 /* Variables for ADC conversion data computation to physical values */
 __IO uint16_t uhADCxConvertedData_VoltageGPIO_mVolt = 0;        /* Value of voltage on GPIO pin (on which is mapped ADC channel) calculated from ADC conversion data (unit: mV) */
 __IO uint16_t uhADCxConvertedData_VrefInt_mVolt = 0;            /* Value of internal voltage reference VrefInt calculated from ADC conversion data (unit: mV) */
-__IO  int16_t hADCxConvertedData_Temperature_DegreeCelsius = 0; /* Value of temperature calculated from ADC conversion data (unit: degree Celcius) */
+__IO  int16_t hADCxConvertedData_Temperature_DegreeCelsius = 0; /* Value of temperature calculated from ADC conversion data (unit: degree Celsius) */
 __IO uint16_t uhADCxConvertedData_VrefAnalog_mVolt = 0;         /* Value of analog reference voltage (Vref+), connected to analog voltage supply Vdda, calculated from ADC conversion data (unit: mV) */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -293,7 +292,7 @@ void Configure_DMA(void)
   *           the setting of these parameters is bypassed without error
   *           reporting:
   *           it can be the expected behavior in case of recall of this 
-  *           function to update only a few parameters (which update fullfills
+  *           function to update only a few parameters (which update fulfills
   *           the ADC state).
   *           Otherwise, it is up to the user to set the appropriate error 
   *           reporting in user application.
@@ -331,7 +330,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 serie, setting of these features is conditioned to   */
+  /*       On this STM32 series, setting of these features is conditioned to   */
   /*       ADC state:                                                         */
   /*       All ADC instances of the ADC common group must be disabled.        */
   /* Note: In this example, all these checks are not necessary but are        */
@@ -386,7 +385,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 serie, setting of these features is conditioned to   */
+  /*       On this STM32 series, setting of these features is conditioned to   */
   /*       ADC state:                                                         */
   /*       ADC must be disabled.                                              */
   if (LL_ADC_IsEnabled(ADC1) == 0)
@@ -414,7 +413,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 serie, setting of these features is conditioned to   */
+  /*       On this STM32 series, setting of these features is conditioned to   */
   /*       ADC state:                                                         */
   /*       ADC must be disabled or enabled without conversion on going        */
   /*       on group regular.                                                  */
@@ -437,7 +436,7 @@ void Configure_ADC(void)
     LL_ADC_REG_SetOverrun(ADC1, LL_ADC_REG_OVR_DATA_OVERWRITTEN);
     
     /* Set ADC group regular sequencer */
-    /* Note: On this STM32 serie, ADC group regular sequencer is              */
+    /* Note: On this STM32 series, ADC group regular sequencer is              */
     /*       fully configurable: sequencer length and each rank               */
     /*       affectation to a channel are configurable.                       */
     /*       Refer to description of function                                 */
@@ -460,7 +459,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 serie, setting of these features is conditioned to   */
+  /*       On this STM32 series, setting of these features is conditioned to   */
   /*       ADC state:                                                         */
   /*       ADC must be disabled or enabled without conversion on going        */
   /*       on group injected.                                                 */
@@ -486,7 +485,7 @@ void Configure_ADC(void)
     // LL_ADC_INJ_SetQueueMode(ADC1, LL_ADC_INJ_QUEUE_DISABLE);
     
     /* Set ADC group injected sequencer */
-    /* Note: On this STM32 serie, ADC group injected sequencer is             */
+    /* Note: On this STM32 series, ADC group injected sequencer is             */
     /*       fully configurable: sequencer length and each rank               */
     /*       affectation to a channel are configurable.                       */
     /*       Refer to description of function                                 */
@@ -507,7 +506,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 serie, setting of these features is conditioned to   */
+  /*       On this STM32 series, setting of these features is conditioned to   */
   /*       ADC state:                                                         */
   /*       ADC must be disabled or enabled without conversion on going        */
   /*       on either groups regular or injected.                              */
@@ -546,7 +545,7 @@ void Configure_ADC(void)
   
   /*## Configuration of ADC transversal scope: oversampling ##################*/
   
-  /* Note: Feature not available on this STM32 serie */
+  /* Note: Feature not available on this STM32 series */
   
   
   /*## Configuration of ADC interruptions ####################################*/
@@ -592,7 +591,7 @@ void Activate_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 serie, setting of these features is conditioned to   */
+  /*       On this STM32 series, setting of these features is conditioned to   */
   /*       ADC state:                                                         */
   /*       ADC must be disabled.                                              */
   /* Note: In this example, all these checks are not necessary but are        */
@@ -876,7 +875,7 @@ void UserButton_Callback(void)
   /* Start ADC group regular conversion */
   /* Note: Hardware constraint (refer to description of the function          */
   /*       below):                                                            */
-  /*       On this STM32 serie, setting of this feature is conditioned to     */
+  /*       On this STM32 series, setting of this feature is conditioned to     */
   /*       ADC state:                                                         */
   /*       ADC must be enabled without conversion on going on group regular,  */
   /*       without ADC disable command on going.                              */
@@ -997,5 +996,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

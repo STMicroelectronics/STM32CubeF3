@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for Projects of STM32CubeF3 Firmware Package</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for-projects-of-stm32cubef3-firmware-package"><strong>Release Notes for Projects of STM32CubeF3 Firmware Package</strong></h1>
+<p>Copyright © 2016 STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="../_htmresc/st_logo.png" alt="ST logo" /></a>
+</center>
+<h1 id="purpose">Purpose</h1>
+<p>The projects are a set of applicative tasks that aim to explain and provide use cases of the different products features based on the products hardware (Boards, STM32 Core(s) features, interconnections and peripherals) and built around the different firmware components. They can be directly used or adapted by the STM32CubeF3 Firmware Package users. They provide basic functionalities, show main features or demonstrate performance. They are provided with preconfigured projects for the main supported toolchains.</p>
+<p>In the STM32CubeF3 Firmware Package, the projects are organized in a sequential scheme based on the following levels:</p>
+<ul>
+<li>Boards : Hardware platform (evaluation, discovery, nucleo boards)</li>
+<li>Project Category:
+<ul>
+<li>Applications</li>
+<li>Demonstrations</li>
+<li>Examples</li>
+<li>Examples_LL</li>
+<li>Examples_MIX</li>
+<li>Templates</li>
+<li>Templates_LL</li>
+</ul></li>
+<li>Project Class</li>
+<li>Project Subclass</li>
+</ul>
+<p>The Project Class refers to the main peripherals (drivers), middleware libraries or BSP classes while the projects Subclass stands for a project specific feature within a class.</p>
+<p>The exhaustive list of projects is provided in this table: <a href="STM32CubeProjectsList.html">STM32CubeProjectsList</a>.</p>
+<p>Here is the list of references to user documents:</p>
+<ul>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00116575.pdf">UM1766</a>: Getting started with STM32CubeF3 for STM32F3 Series.</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00122016.pdf">UM1786</a>: Description of STM32F3xx HAL drivers.</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00108129.pdf">UM1734</a>: STM32Cube USB device library</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00105259.pdf">UM1721</a>: Developing Applications on STM32Cube with FatFs</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00105262.pdf">UM1722</a>: Developing Applications on STM32Cube with RTOS</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00103685.pdf">UM1713</a>: Developing applications on STM32Cube with LwIP TCP/IP stack</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00121991.pdf">UM1784</a>: STM32CubeF3 Nucleo demonstration firmware.</li>
+</ul>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section15" checked aria-hidden="true"> <label for="collapse-section15" aria-hidden="true"><strong>V1.11.4 / 27-January-2023</strong></label>
+<div>
+<h1 id="maintenance-release">Maintenance release</h1>
+<h2 id="main-changes">Main Changes</h2>
+<ul>
+<li>Patch release to fix known defects and enhancements implementation.</li>
+<li><p>All source files: update disclaimer to add reference to the new license agreement.</p></li>
+<li><strong>Applications</strong>
+<ul>
+<li><strong>EEPROM</strong>
+<ul>
+<li>Replace hard-coded page end address by a variable in EE_VerifyPageFullyErased() to consider both PAGE 0 and PAGE 1 instead of only PAGE 0.</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li><strong>Examples_CRC</strong>
+<ul>
+<li>Update CRC LL examples to fix incorrect bytes stream handling.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.40.2</strong> + ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.31 + ST-LINK, pack available here:
+<ul>
+<li>www.keil.com/dd2/Pack/ (Section : STMicroelectronics STM32F3 Series Device Support)</li>
+<li>Only template projects are migrated to Arm Compiler 6 with MDK-ARM 5.31 (“AC-like Warnings” mode).</li>
+</ul></li>
+<li>System Workbench for STM32 (SW4STM32) (7-2018-q2-update) toolchain <strong>V2.9.0</strong> + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section14" aria-hidden="true"> <label for="collapse-section14" aria-hidden="true"><strong>V1.11.3 / 23-July-2021</strong></label>
+<div>
+<h1 id="maintenance-release-1">Maintenance release</h1>
+<h2 id="main-changes-1">Main Changes</h2>
+<ul>
+<li>General updates to fix compilation warnings with gcc v9.</li>
+<li>Updated examples and applications to avoid clearing DMA using global flag GIFx</li>
+</ul>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.22.2 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.26 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.9 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-1">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section13" aria-hidden="true"> <label for="collapse-section13" aria-hidden="true"><strong>V1.11.2 / 23-July-2020</strong></label>
+<div>
+<h1 id="maintenance-release-2">Maintenance release</h1>
+<h2 id="main-changes-2">Main Changes</h2>
+<ul>
+<li>Update All MDK-ARM Templates projects to support new ARM compiler V6.</li>
+</ul>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li>Update Demo and BSP example to support new <strong>MEMS I3G4250D</strong> and <strong>LSM303AGR</strong> .</li>
+</ul>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>The demo execution may freeze. In case this happens, simply restart it by pressing the Reset Button B2.
+<ul>
+<li>Action is being taken to fix this known limitation in a future release.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.22.2 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.26 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.9 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-2">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section12" aria-hidden="true"> <label for="collapse-section12" aria-hidden="true"><strong>V1.11.1 / 23-July-2020</strong></label>
+<div>
+<h1 id="maintenance-release-3">Maintenance release</h1>
+<h2 id="main-changes-3">Main Changes</h2>
+<ul>
+<li>No changes compared to previous version (V1.11.0).</li>
+</ul>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.22.2</strong> + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-3">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11" aria-hidden="true"> <label for="collapse-section11" aria-hidden="true"><strong>V1.11.0 / 12-September-2019</strong></label>
+<div>
+<h1 id="maintenance-release-4">Maintenance release</h1>
+<h2 id="main-changes-4">Main Changes</h2>
+<ul>
+<li>Update HAL I2C examples to be compliant with new I2C API</li>
+<li>Update HAL TIM examples to be compliant with new TIM API</li>
+<li>Update HAL IWDG examples to be compliant with new HAL_TIMEx_RemapConfig() API</li>
+<li>Update HAL HRTIM examples to be compliant with new HRTIM API</li>
+<li>Update STemWin applications to be compliant with new STemWin architecture</li>
+<li>Update USB Device projects to be compliant with USB Device V2.5.3
+<ul>
+<li>Update USB device applications by adding a UNUSED() macro in the following API on file usbd_desc.c files in order to avoid compilation warnings with EWARM 8.30
+<ul>
+<li>USBD_DFU_DeviceDescriptor()</li>
+<li>USBD_DFU_LangIDStrDescriptor()</li>
+<li>USBD_DFU_ManufacturerStrDescriptor()</li>
+<li>USBD_DFU_SerialStrDescriptor()</li>
+</ul></li>
+<li>Remove useless setting of ep0_mps in usbd_conf.c file for USB device applications</li>
+<li>Remove led toggle behavior inside systick handler API</li>
+</ul></li>
+<li>Update FreeRTOS applications to be compliant with FreeRTOS V10.0.1
+<ul>
+<li>update to use new FreeRTOSConfig.h template file</li>
+</ul></li>
+<li>Update TouchSensing applications to be compliant with new TouchSensing version
+<ul>
+<li>tsl_user.c: Add error management in tsl_user_Exec() API</li>
+</ul></li>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Update stm32f3xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Update stm32f3xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Update stm32f3xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f3xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-4">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.22.2 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.26 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.9 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-4">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section100" aria-hidden="true"> <label for="collapse-section100" aria-hidden="true"><strong>V1.10.0 / 12-June-2018</strong></label>
+<div>
+<h1 id="maintenance-release-5">Maintenance release</h1>
+<h2 id="main-changes-5">Main Changes</h2>
+<ul>
+<li>Update CAN examples to support new HAL CAN driver.</li>
+<li>Update stm32f3xx_hal_conf.h by adding switch HAL_CAN_LEGACY_MODULE_ENABLED.</li>
+</ul>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Update stm32f3xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
+<li>Update CAN example to be aligned to the new HAL CAN driver.</li>
+<li>Update CAN example to set a fixed bitrate equal to 1 Mbit/s.</li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Update stm32f3xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
+<li>Update CAN example to be aligned to the new HAL CAN driver.</li>
+<li>Update CAN example to set a fixed bitrate equal to 1 Mbit/s.</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-5">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-5">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section10" aria-hidden="true"> <label for="collapse-section10" aria-hidden="true"><strong>V1.9.0 / 23-June-2017</strong></label>
+<div>
+<h1 id="maintenance-release-6">Maintenance release</h1>
+<h2 id="main-changes-6">Main Changes</h2>
+<ul>
+<li>All projects updated following changes in latest version of HAL.</li>
+<li>General updates to be compliant with Linux platforms</li>
+<li>Remove support of Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain.</li>
+<li>Align stm32f3xx_hal_conf.h with latest template defined in HAL.</li>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul>
+<p><strong>STM32303E_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Add a note in DFU example readme : “How to install Dfuse demo under Window 8.1”.</li>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Correct RTC_PREDIV values (for LSI clock) in HAL_TIMEBASE_RTC_ALARM and HAL_TIMEBASE_RTC_WAKEUP examples.</li>
+<li>Rework implementation of SPI_FullDuplex_ComDMA and SPI_FullDuplex_ComIT examples.</li>
+<li>Fix calculation issue of uwDiffCapture for TIM_InputCapture example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Add a note in DFU example readme : “How to install Dfuse demo under Window 8.1”.</li>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Correct RTC_PREDIV values (for LSI clock) in HAL_TIMEBASE_RTC_ALARM and HAL_TIMEBASE_RTC_WAKEUP examples.</li>
+<li>Rework implementation of SPI_FullDuplex_ComDMA and SPI_FullDuplex_ComIT examples.</li>
+<li>Fix calculation issue of uwDiffCapture for TIM_InputCapture example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Correct RTC_PREDIV values (for LSI clock) in HAL_TIMEBASE_RTC_ALARM and HAL_TIMEBASE_RTC_WAKEUP examples.</li>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+<li>Fix calculation issue of uwDiffCapture for TIM_InputCapture example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Add a note in DFU example readme : “How to install Dfuse demo under Window 8.1”.</li>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Correct RTC_PREDIV values (for LSI clock) in HAL_TIMEBASE_RTC_ALARM and HAL_TIMEBASE_RTC_WAKEUP examples.</li>
+<li>Fix calculation issue of uwDiffCapture for TIM_InputCapture example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Add a note in DFU example readme : “How to install Dfuse demo under Window 8.1”.</li>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Correct RTC_PREDIV values (for LSI clock) in HAL_TIMEBASE_RTC_ALARM and HAL_TIMEBASE_RTC_WAKEUP examples.</li>
+<li>Reformat SPI_FullDuplex_AdvComIT example with a up to date directory structure. For Slave board MASTER_BOARD should be uncommented.</li>
+<li>Rework of TIM_TimeBase example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303RE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Add a note in DFU example readme : “How to install Dfuse demo under Window 8.1”.</li>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+<li>Update DFU_Standalone example to be compliant with Linux platforms</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303K8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Fix calculation issue of uwDiffCapture for TIM_InputCapture example.</li>
+</ul></li>
+<li><p><strong>Templates LL</strong></p>
+<ul>
+<li>Correct USER_BUTTON_GPIO_CLK_ENABLE definition.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3348-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Correct RTC_PREDIV values (for LSI clock) in HAL_TIMEBASE_RTC_ALARM and HAL_TIMEBASE_RTC_WAKEUP examples.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F334R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Fix precision issue in FreeRTOS_ThreadCreation example.</li>
+</ul></li>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>Rework of TIM_TimeBase example.</li>
+<li>Correct uwMeasuredDutyCycle calculation in TIM_PWMOutput and TIM_PWMOutput_Init examples.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303ZE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Rework SPI_HalfDuplex_ComPolling example to be aligned with latest SPI driver.</li>
+<li>Update TIM_OCActive example : use PB.00 (connected to LED1) as reference.</li>
+<li>Fix calculation issue of uwDiffCapture for TIM_InputCapture example</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-6">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-6">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.8.0 / 14-April-2017</strong></label>
+<div>
+<h1 id="maintenance-release-7">Maintenance release</h1>
+<h2 id="main-changes-7">Main Changes</h2>
+<ul>
+<li>No changes compared to previous version (V1.7.0).</li>
+</ul>
+<h2 id="known-limitations-7">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.13.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-7">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.7.0 / 16-December-2016</strong></label>
+<div>
+<h1 id="maintenance-release-8">Maintenance release</h1>
+<h2 id="main-changes-8">Main Changes</h2>
+<ul>
+<li>All projects updated following changes in latest version of HAL and Middlewares.</li>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Added new projects LL_Template to provide a reference project through the LL API that can be used to build any firmware application</li>
+</ul>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>STemWin
+<ul>
+<li>Use STemWin528 “build 20160205“ instead of STemWin526 “build 20150626“.</li>
+</ul></li>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS examples to illustrate how to customize the HAL time base driver :
+<ul>
+<li>FreeRTOS_LowPower</li>
+<li>FreeRTOS_Mutexes</li>
+<li>FreeRTOS_Queues</li>
+<li>FreeRTOS_Semaphore</li>
+<li>FreeRTOS_SemaphoreFromISR</li>
+<li>FreeRTOS_ThreadCreation</li>
+<li>FreeRTOS_TimersHAL_TimeBase_RTC_ALARM</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated DMA_FLASHToRAM examples to implement new API HAL_DMA_RegisterCallback()</li>
+<li>Updated Reload Counter and Window values based on correct LSI frequency in IWDG_WindowMode example</li>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated TIM_Asymetric example to declare two handles instead of one for timers.</li>
+<li>Updated error management (in case of AF error) in all I2C examples</li>
+<li>Updated UART_HyperTerminal_DMA and UART_WakeUpFromStop examples after UART driver rework</li>
+</ul></li>
+<li><p><strong>Templates LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32303E_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>STemWin
+<ul>
+<li>Use STemWin528 “build 20160205“ instead of STemWin526 “build 20150626“.</li>
+</ul></li>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS examples to illustrate how to customize the HAL time base driver :
+<ul>
+<li>FreeRTOS_Mail</li>
+<li>FreeRTOS_Mutexes</li>
+<li>FreeRTOS_Queues</li>
+<li>FreeRTOS_Semaphore</li>
+<li>FreeRTOS_SemaphoreFromISR</li>
+<li>FreeRTOS_Signal</li>
+<li>FreeRTOS_SignalFromISR</li>
+<li>FreeRTOS_ThreadCreation</li>
+<li>FreeRTOS_Timers</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated DMA_FLASHToRAM examples to implement new API HAL_DMA_RegisterCallback()</li>
+<li>Updated Reload Counter and Window values based on correct LSI frequency in IWDG_WindowMode example</li>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated error management (in case of AF error) in all I2C examples</li>
+<li>Updated UART_HyperTerminal_DMA and UART_WakeUpFromStop examples after UART driver rework</li>
+</ul></li>
+<li><p><strong>Templates LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>STemWin
+<ul>
+<li>Use STemWin528 “build 20160205“ instead of STemWin526 “build 20150626“.</li>
+</ul></li>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS examples to illustrate how to customize the HAL time base driver :
+<ul>
+<li>FreeRTOS_LowPower</li>
+<li>FreeRTOS_Mail</li>
+<li>FreeRTOS_Mutexes</li>
+<li>FreeRTOS_Queues</li>
+<li>FreeRTOS_Semaphore</li>
+<li>FreeRTOS_SemaphoreFromISR</li>
+<li>FreeRTOS_Signal</li>
+<li>FreeRTOS_SignalFromISR</li>
+<li>FreeRTOS_ThreadCreation</li>
+<li>FreeRTOS_Timers</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated DMA_FLASHToRAM examples to implement new API HAL_DMA_RegisterCallback()</li>
+<li>Updated Reload Counter and Window values based on correct LSI frequency in IWDG_WindowMode example</li>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated error management (in case of AF error) in all I2C examples</li>
+<li>Updated UART_HyperTerminal_DMA and UART_WakeUpFromStop examples after UART driver rework</li>
+<li>Removed CEC demo function in BSP example following BSP/CEC driver removal</li>
+<li>Updated CEC examples following HAL CEC driver evolution :
+<ul>
+<li>CEC_DataExchange</li>
+<li>CEC_ListenMode</li>
+<li>CEC_MultiAddress</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS_ThreadCreation example :
+<ul>
+<li>to illustrate how to customize the HAL time base driver</li>
+<li>to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated Reload Counter and Window values based on correct LSI frequency in IWDG_WindowMode example</li>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated error management (in case of AF error) in all I2C examples</li>
+<li>Updated UART examples after UART driver rework :
+<ul>
+<li>UART_TwoBoards_ComDMA</li>
+<li>UART_TwoBoards_ComIT</li>
+<li>UART_TwoBoards_ComPolling</li>
+<li>UART_WakeUpFromStop</li>
+</ul></li>
+<li>Updated SPI examples (SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT and SPI_FullDuplex_ComPolling) following SPI driver rework</li>
+</ul></li>
+<li><p><strong>Templates LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS_ThreadCreation example :
+<ul>
+<li>to illustrate how to customize the HAL time base driver</li>
+<li>to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated USB examples to correct the GPIO Pin configuration</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated DMA_FLASHToRAM examples to implement new API HAL_DMA_RegisterCallback()</li>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Corrected I2C_TwoBoards_RestartComIT example by adding a wait on a Master request event before initiating a receive or transmit action</li>
+<li>Updated error management (in case of AF error) in I2C_TwoBoards_ComPolling example</li>
+<li>Updated UART examples after UART driver rework :
+<ul>
+<li>UART_TwoBoards_ComDMA</li>
+<li>UART_TwoBoards_ComIT</li>
+<li>UART_TwoBoards_ComPolling</li>
+<li>UART_WakeUpFromStop</li>
+</ul></li>
+<li>Updated SPI examples (SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT and SPI_FullDuplex_ComPolling) following SPI driver rework</li>
+<li>Rework of ADC_AnalogWatchdog example</li>
+</ul></li>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>Added USER_BUTTON_EXTI_LINE and USER_BUTTON_IRQHANDLER definition in main.h for all LL examples in order to get more abstraction.</li>
+</ul></li>
+<li><p><strong>Templates_LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303K8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS_ThreadCreation example :
+<ul>
+<li>to illustrate how to customize the HAL time base driver</li>
+<li>to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated DMA_FLASHToRAM examples to implement new API HAL_DMA_RegisterCallback()</li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Corrected I2C_TwoBoards_RestartComIT example by adding a wait on a Master request event before initiating a receive or transmit action</li>
+<li>Updated error management (in case of AF error) in I2C_TwoBoards_ComPolling example</li>
+<li>Updated UART examples after UART driver rework :
+<ul>
+<li>UART_HyperTerminal_DMA</li>
+<li>UART_TwoBoards_ComDMA</li>
+<li>UART_TwoBoards_ComIT</li>
+<li>UART_TwoBoards_ComPolling</li>
+<li>UART_WakeUpFromStop</li>
+</ul></li>
+<li>Updated SPI examples (SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT and SPI_FullDuplex_ComPolling) following SPI driver rework</li>
+</ul></li>
+<li><p><strong>Templates_LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303RE-Nucleo</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS examples to illustrate how to customize the HAL time base driver :
+<ul>
+<li>FreeRTOS_Queues</li>
+<li>FreeRTOS_Semaphore</li>
+<li>FreeRTOS_SemaphoreFromISR</li>
+<li>FreeRTOS_ThreadCreation</li>
+<li>FreeRTOS_Timers</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated USB examples to correct the GPIO Pin configuration</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Updated DMA_FLASHToRAM examples to implement new API HAL_DMA_RegisterCallback()</li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated error management (in case of AF error) in I2C_TwoBoards_ComPolling example</li>
+<li>Updated SPI examples (SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT and SPI_FullDuplex_ComPolling) following SPI driver rework</li>
+</ul></li>
+<li><p><strong>Templates_LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303ZE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated USB examples to correct the GPIO Pin configuration</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated DMA_FLASHToRAM examples to implement new API HAL_DMA_RegisterCallback()</li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated error management (in case of AF error) in all I2C examples</li>
+<li>Updated UART examples after UART driver rework :
+<ul>
+<li>UART_Printf</li>
+<li>UART_TwoBoards_ComDMA</li>
+<li>UART_TwoBoards_ComIT</li>
+<li>UART_TwoBoards_ComPolling</li>
+</ul></li>
+<li>Updated SPI examples (SPI_FullDuplex_AdvComPolling, SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT, SPI_FullDuplex_ComPolling and SPI_HalfDuplex_ComPolling) following SPI driver rework</li>
+</ul></li>
+<li><p><strong>Templates_LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3348-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS_ThreadCreation example :
+<ul>
+<li>to illustrate how to customize the HAL time base driver</li>
+<li>to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated UART examples after UART driver rework :
+<ul>
+<li>UART_TwoBoards_ComDMA</li>
+<li>UART_TwoBoards_ComIT</li>
+<li>UART_TwoBoards_ComPolling</li>
+<li>UART_WakeUpFromStop</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>ADC_CONVERSION_TIMEOUT updated for HRTIM_BuckBoost example.</li>
+</ul></li>
+<li><p><strong>Templates_LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F334R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>FreeRTOS
+<ul>
+<li>Upgrade to FreeRTOS V9.0.0 (ST Modified 20160930)</li>
+</ul></li>
+<li>Updated FreeRTOS_ThreadCreation example :
+<ul>
+<li>to illustrate how to customize the HAL time base driver</li>
+<li>to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>Added USER_BUTTON_EXTI_LINE and USER_BUTTON_IRQHANDLER definition in main.h for all LL examples in order to get more abstraction.</li>
+</ul></li>
+<li><p><strong>Examples_MIX</strong></p>
+<ul>
+<li>Updated all examples using timers to initialize the new field AutoReloadPreload in TIM_Base_InitTypeDef structure</li>
+<li>Updated UART_HyperTerminal_IT and and UART_HyperTerminal_TxPolling examples after UART driver rework</li>
+</ul></li>
+<li><p><strong>Templates_LL</strong></p>
+<ul>
+<li>First official release containing the Low Layer templates.</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-8">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.60.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.21 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.10 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-8">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.6.0 / 01-July-2016</strong></label>
+<div>
+<h1 id="maintenance-release-9">Maintenance release</h1>
+<h2 id="main-changes-9">Main Changes</h2>
+<ul>
+<li>All projects updated following changes in latest version of HAL and Middlewares.</li>
+<li>Added new projects LL + MIX
+<ul>
+<li>LL examples: ADC, COMP, CORTEX, CRC, DMA, EXTI, GPIO, HRTIM, I2C, IWDG, PWR, RCC, RTC, SPI, TIM, USART, WWDG</li>
+<li>HAL/LL examples: ADC, CRC, DMA, I2C, OPAMP, PWR, TIM, UART</li>
+</ul></li>
+</ul>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated IWDG and WWDG examples following HAL IWDG and HAL WWDG drivers evolution:
+<ul>
+<li>_WindowMode</li>
+<li>_Reset</li>
+<li>_Example</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32303E_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated WWDG examples following HAL WWDG driver evolution:
+<ul>
+<li>_Example</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated IWDG and WWDG examples following HAL IWDG and HAL WWDG drivers evolution:
+<ul>
+<li>_WindowMode</li>
+<li>_Reset</li>
+<li>_Example</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated IWDG and WWDG examples following HAL IWDG and HAL WWDG drivers evolution:
+<ul>
+<li>_WindowMode</li>
+<li>_Reset</li>
+<li>_Example</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>First official release.</li>
+<li>Added new Low Layer examples:
+<ul>
+<li>I2C</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples_MIX</strong></p>
+<ul>
+<li>First official release.</li>
+<li>Added new HAL/Low Layer examples:
+<ul>
+<li>I2C</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F303K8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated WWDG examples following HAL WWDG driver evolution:
+<ul>
+<li>_Example</li>
+</ul></li>
+<li>Updated I2C example to fix toolchain dependency issue:
+<ul>
+<li>2C2C_TwoBoards_RestartAdvComIT</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F303RE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated WWDG examples following HAL WWDG driver evolution:
+<ul>
+<li>_Example</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F303ZE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated WWDG examples following HAL WWDG driver evolution:
+<ul>
+<li>_Example</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>First official release.</li>
+<li>Added new Low Layer examples:
+<ul>
+<li>CORTEX</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F3348-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>First official release.</li>
+<li>Added new Low Layer examples:
+<ul>
+<li>HRTIM</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F334R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Examples_LL</strong></p>
+<ul>
+<li>First official release.</li>
+<li>Added new Low Layer examples:
+<ul>
+<li>ADC, COMP, CRC, DMA, EXTI, GPIO, I2C, IWDG, PWR, RCC, RTC, SPI, TIM, USART, WWDG.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples_MIX</strong></p>
+<ul>
+<li>First official release.</li>
+<li>Added new Low Layer examples:
+<ul>
+<li>ADC, CRC, DMA, OPAMP, PWR, TIM, UART</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-9">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.50.1 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-9">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-9">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section6" aria-hidden="true"> <label for="collapse-section6" aria-hidden="true"><strong>V1.5.0 / 29-April-2016</strong></label>
+<div>
+<h1 id="maintenance-release-10">Maintenance release</h1>
+<h2 id="main-changes-10">Main Changes</h2>
+<ul>
+<li>All projects updated following changes in latest version of HAL and Middlewares.</li>
+<li>Added new projects I2C: to introduce I2C repeated start feature.
+<ul>
+<li>I2C_TwoBoards_RestartAdvComIT</li>
+<li>I2C_TwoBoards_RestartComIT</li>
+</ul></li>
+<li>Added new projects CRC:
+<ul>
+<li>CRC_Bytes_Stream_7bit_CRC: to illustrate the usage Input/Output options CRC calculation.</li>
+<li>CRC_Data_Reversing_16bit_CRC: to illustrate input/output data reversal features.</li>
+</ul></li>
+<li>Added new projects TouchSensing: using the STMTouch driver in Interrupt mode.
+<ul>
+<li>TouchSensing/TouchSensing_Linear_IT</li>
+<li>TouchSensing/TouchSensing_2touchkeys_IT</li>
+</ul></li>
+</ul>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Added new project TouchSensing: using the STMTouch driver in Interrupt mode.
+<ul>
+<li>TouchSensing/TouchSensing_2touchkeys_IT</li>
+</ul></li>
+<li>Updated TSC projects after integration of IO default state management.
+<ul>
+<li>TSC/TSC_BasicAcquisition_Interrupt</li>
+<li>TSC/TSC_BasicAcquisition_Polling</li>
+</ul></li>
+<li>Replaced “" by”/" in STemWin applications to ensure STM32Cube compatibility with GNU/Linux-based platform.</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Added new project CRC_Bytes_Stream_7bit_CRC example to illustrate the usage Input/Output options CRC calculation.</li>
+<li>Updated I2C projects after I2C driver rework:
+<ul>
+<li>I2C_EEPROM</li>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+<li>I2C_WakeUpFromStop</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32303E_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Added new project TouchSensing: using the STMTouch driver in Interrupt mode.
+<ul>
+<li>TouchSensing/TouchSensing_2touchkeys_IT</li>
+</ul></li>
+<li>Updated TSC projects after integration of IO default state management.
+<ul>
+<li>TSC/TSC_BasicAcquisition_Interrupt</li>
+<li>TSC/TSC_BasicAcquisition_Polling</li>
+</ul></li>
+<li>Replaced “" by”/" in STemWin applications to ensure STM32Cube compatibility with GNU/Linux-based platform.</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Added new project CRC_Bytes_Stream_7bit_CRC example to illustrate the usage Input/Output options CRC calculation.</li>
+<li>Updated I2C projects after I2C driver rework:
+<ul>
+<li>I2C_EEPROM</li>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+<li>I2C_WakeUpFromStop</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated IAP applications following HAL UART modifications.</li>
+<li>Added new project TouchSensing: using the STMTouch driver in Interrupt mode.
+<ul>
+<li>TouchSensing/TouchSensing_Linear_IT</li>
+</ul></li>
+<li>Replaced “" by”/" in STemWin applications to ensure STM32Cube compatibility with GNU/Linux-based platform.</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated I2C projects after I2C driver rework:
+<ul>
+<li>I2C_EEPROM</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated I2C projects after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+<li>I2C_WakeUpFromStop</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Added new projects I2C to introduce I2C repeated start feature:
+<ul>
+<li>I2C_TwoBoards_RestartAdvComIT</li>
+<li>I2C_TwoBoards_RestartComIT</li>
+</ul></li>
+<li>Updated I2C projects after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+<li>I2C_WakeUpFromStop</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303K8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Added new projects I2C to introduce I2C repeated start feature:
+<ul>
+<li>I2C_TwoBoards_RestartAdvComIT</li>
+<li>I2C_TwoBoards_RestartComIT</li>
+</ul></li>
+<li>Added new projects CRC:
+<ul>
+<li>CRC_Data_Reversing_16bit_CRC example to illustrate input/output data reversal features.</li>
+<li>CRC_Bytes_Stream_7bit_CRC example to illustrate the usage Input/Output options CRC calculation.</li>
+</ul></li>
+<li>Updated I2C projects after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+<li>I2C_WakeUpFromStop</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303RE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated I2C projects after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+<li>I2C_WakeUpFromStop</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303ZE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3348-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F334R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Added new projects CRC:
+<ul>
+<li>CRC_Data_Reversing_16bit_CRC example to illustrate input/output data reversal features.</li>
+<li>CRC_Bytes_Stream_7bit_CRC example to illustrate the usage Input/Output options CRC calculation.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-10">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.50.1 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-10">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-10">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.4.0 / 13-November-2015</strong></label>
+<div>
+<h1 id="maintenance-release-11">Maintenance release</h1>
+<h2 id="main-changes-11">Main Changes</h2>
+<ul>
+<li>Adding new projects to introduce the FreeRTOS V8.2.1 :
+<ul>
+<li>FreeRTOS_SignalFromISR (thread signaling from an interrupt)</li>
+<li>FreeRTOS_Signal (thread signaling)</li>
+<li>FreeRTOS_Mail (mail queues)</li>
+</ul></li>
+<li>Adding new project to emulate EEPROM on internal Flash :
+<ul>
+<li>EEPROM_Emulation (refer to AN2594 for further details)</li>
+</ul></li>
+<li>Adding new projects to configure HRTIM :
+<ul>
+<li>HRTIM_LLC_HalfBridge (control a half-bridge LLC converter with synchronous rectification)</li>
+<li>HRTIM_Multiphase (control a multiphase buck converter)</li>
+</ul></li>
+<li>Adding new projects using In-Application Programming (IAP) through USART (refer to AN4045 for further details) :
+<ul>
+<li>IAP_Main</li>
+<li>IAP_Binary_Template</li>
+</ul></li>
+<li>Provided extended set of projects on board STM32F3xx_Nucleo_32.</li>
+<li>Provided extended set of projects on board STM32F3xx_Nucleo_144.</li>
+</ul>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>USB
+<ul>
+<li>Aligned USB projects with new HAL USB.</li>
+<li>Updated USB Applications to manage Vbus detection during Disconnect event and USBCV test.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated Adafruit_LCD_1_8_SD_Joystick demonstrations after upgrade to FatFs R0.11 ST modified 20150508.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Updated TrueStudio projects files (path update after project relocation).</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples in FW package projects (UART IRQ needs now to be enabled).</li>
+<li>Added RCC examples for LSE and HSE bypass.</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Corrected Examples/TIM/TIM_PWMInput directory name.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F303K8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>First Official Release.</li>
+<li>FreeRTOS application is provided to easily start new development on STM32F303K8-Nucleo board.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Extended set of examples (ADC, CRC, DMA, FLASH, I2C, IWDG, PWR, RTC, SPI, TIM, UART, WWDG) is provided to start new development on STM32F303K8-Nucleo board.</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F303RE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FatFS
+<ul>
+<li>Upgrade to FatFs R0.11 ST modified 20150508.</li>
+</ul></li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>USB
+<ul>
+<li>Aligned USB projects with new HAL USB.</li>
+<li>Updated USB Applications to manage Vbus detection during Disconnect event and USBCV test.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Updated projects to use target STM32F303xE.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated Adafruit_LCD_1_8_SD_Joystick demonstrations after upgrade to FatFs R0.11 ST modified 20150508.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Updated projects to use target STM32F303xE.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Added RCC examples for LSE and HSE bypass.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Updated projects to use target STM32F303xE.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Updated projects to use target STM32F303xE.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303ZE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>First Official Release.</li>
+<li>FatFS and USB applications are provided to easily start new development on STM32F303ZE-Nucleo board.</li>
+</ul></li>
+<li><p>Demonstrations**:</p>
+<ul>
+<li>First Official Release.</li>
+<li>A demonstration using the Adafruit_LCD_1_8_SD_Joystick shield is added to provide sample code on how to display a counter on this shield.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>First Official Release.</li>
+<li>Various examples are provided to easily start new development on STM32F303ZE-Nucleo board.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>First Official Release.</li>
+<li>Template project is provided to easily start new development on STM32F303ZE-Nucleo board.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F334R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated Adafruit_LCD_1_8_SD_Joystick demonstrations after upgrade to FatFs R0.11 ST modified 20150508.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Updated TrueStudio projects files (path update after project relocation).</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3348-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Fixed compilation issue and updated binary (.hex).</li>
+</ul></li>
+<li><p><strong>Examples</strong></p></li>
+<li>Performed HAL API alignment (macros/functions/constants renaming).
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Added HRTIM examples.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples in FW package projects (UART IRQ needs now to be enabled).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated ADC examples following HAL_ADC_Init() updates.</li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Fixed compilation issue and updated binary (.hex).</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>USB
+<ul>
+<li>Aligned USB projects with new HAL USB.</li>
+<li>Updated USB Applications to manage Vbus detection during Disconnect event and USBCV test.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>USB
+<ul>
+<li>Aligned USB projects with new HAL USB.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated CORTEXM_MPU examples to use the new MPU APIs.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples in FW package projects (UART IRQ needs now to be enabled).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples:
+<ul>
+<li>Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Corrected configuration of Timer Output Compare Configuration Structure.</li>
+<li>Corrected Examples/TIM/TIM_PWMInput directory name.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+<li>Corrected EWARM configuration files (updated startup_xxxx.s files).</li>
+<li>Fixed compilation warnings reported with TrueStudio tool chain.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+</ul>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FatFS
+<ul>
+<li>Upgrade to FatFs R0.11 ST modified 20150508.</li>
+</ul></li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>USB
+<ul>
+<li>Use latest USB Device Library V2.4.0.</li>
+<li>Aligned USB projects with new HAL USB.</li>
+<li>Updated USB Applications to manage Vbus detection during Disconnect event and USBCV test.</li>
+</ul></li>
+<li>STemWin
+<ul>
+<li>Use STemWin528 “build 20150415“ instead of STemWin526 “build 20150306“.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated CORTEXM_MPU examples to use the new MPU APIs.</li>
+<li>Updated ADC examples:
+<ul>
+<li>Added missing ADC calibration.</li>
+<li>Updated ADC differential mode example: removed useless calibration in mode single ended.</li>
+</ul></li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples in FW package projects (UART IRQ needs now to be enabled).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples:
+<ul>
+<li>Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+</ul></li>
+<li>Updated COMP examples: removed TIM break.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+</ul>
+<p><strong>STM32303E_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FatFS
+<ul>
+<li>Upgrade to FatFs R0.11 ST modified 20150508.</li>
+</ul></li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>USB
+<ul>
+<li>Use latest USB Device Library V2.4.0.</li>
+<li>Aligned USB projects with new HAL USB.</li>
+<li>Updated USB Applications to manage Vbus detection during Disconnect event and USBCV test.</li>
+</ul></li>
+<li>STemWin
+<ul>
+<li>Use STemWin528 “build 20150415“ instead of STemWin526 “build 20150306“.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples in FW package projects (UART IRQ needs now to be enabled).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples:
+<ul>
+<li>Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Corrected configuration of Timer Output Compare Configuration Structure.</li>
+<li>Corrected Examples/TIM/TIM_PWMInput directory name.</li>
+</ul></li>
+<li>Updated COMP examples: removed TIM break.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>FatFS
+<ul>
+<li>Upgrade to FatFs R0.11 ST modified 20150508.</li>
+</ul></li>
+<li>FreeRTOS
+<ul>
+<li>Use new FreeRTOS V8.2.1 ST modified 20150327.</li>
+<li>Updated FreeRTOS Examples: SysTick_Handler should call osSystickHandler() instead of xPortSysTickHandler().</li>
+</ul></li>
+<li>USB
+<ul>
+<li>Use latest USB Device Library V2.4.0.</li>
+<li>Aligned USB projects with new HAL USB.</li>
+<li>Updated USB Applications to manage Vbus detection during Disconnect event and USBCV test.</li>
+</ul></li>
+<li>STemWin
+<ul>
+<li>Use STemWin528 “build 20150415“ instead of STemWin526 “build 20150306“.</li>
+</ul></li>
+<li>Added EEPROM Emulation application.</li>
+<li>Added IAP application using the USART.</li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Performed HAL API alignment (macros/functions/constants renaming).</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated CORTEXM_MPU examples to use the new MPU APIs.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples in FW package projects (UART IRQ needs now to be enabled).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples:
+<ul>
+<li>Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Corrected configuration of Timer Output Compare Configuration Structure.</li>
+<li>Corrected Examples/TIM/TIM_PWMInput directory name.</li>
+</ul></li>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Updated system_stm32f3xx.c files:
+<ul>
+<li>Used latest CMSIS template version.</li>
+<li>Removed __IO or __I on constant table declaration.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_conf.h files:
+<ul>
+<li>Added LSE_STARTUP_TIMEOUT definition.</li>
+</ul></li>
+<li>Updated stm32f3xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated EWARM and TrueStudio linker files to be aligned with CMSIS contents.</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-11">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40.1 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.16 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.4.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC), STM32F303RE-Nucleo</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB), STM32303E-EVAL</li>
+<li>Nucleo32 boards: STM32F303K8-Nucleo</li>
+<li>Nucleo144 boards: STM32F303ZE-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-11">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-11">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.3.0 / 04-September-2015</strong></label>
+<div>
+<h1 id="maintenance-release-12">Maintenance release</h1>
+<h2 id="main-changes-12">Main Changes</h2>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Alignment of Adafruit_LCD_1_8_SD_Joystick demonstration, after update in Adafruit, FatFS and BSP components.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303K8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>First Official Release.</li>
+<li>A demonstration using the Gravitech 7segments 4digits shield is added to provide sample code on how to display a counter on this shield.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>First Official Release.</li>
+<li>Basic examples (GPIO_IOToggle) are provided to easily start new development on STM32F303K8-Nucleo board.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>First Official Release.</li>
+<li>Template project is provided to easily start new development on STM32F303K8-Nucleo board.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F303RE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Alignment of Adafruit_LCD_1_8_SD_Joystick demonstration, after update in Adafruit, FatFS and BSP components.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F334R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Alignment of Adafruit_LCD_1_8_SD_Joystick demonstration, after update in Adafruit, FatFS and BSP components.</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-12">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.30.1 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.11 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC)</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB)</li>
+<li>STM32F303RE-Nucleo</li>
+<li>STM32303E-EVAL</li>
+<li>STM32F303K8-Nucleo</li>
+</ul>
+<h2 id="backward-compatibility-12">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-12">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>V1.2.0 / 19-June-2015</strong></label>
+<div>
+<h1 id="maintenance-release-13">Maintenance release</h1>
+<h2 id="main-changes-13">Main Changes</h2>
+<ul>
+<li>Add support of System Workbench for STM32 (SW4STM32) toolchain.</li>
+</ul>
+<h2 id="known-limitations-13">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-13">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.30 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.11 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-13">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC)</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB)</li>
+<li>STM32F303RE-Nucleo</li>
+<li>STM32303E-EVAL</li>
+</ul>
+<h2 id="backward-compatibility-13">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-13">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section20" aria-hidden="true"> <label for="collapse-section20" aria-hidden="true"><strong>V1.1.1 / 30-December-2014</strong></label>
+<div>
+<h1 id="maintenance-release-14">Maintenance release</h1>
+<h2 id="main-changes-14">Main Changes</h2>
+<ul>
+<li>Official release.</li>
+</ul>
+<h2 id="known-limitations-14">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-14">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.30 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.11 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-14">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery (RevB)</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo (RevC)</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL (RevB)</li>
+<li>STM32F303RE-Nucleo</li>
+<li><p>STM32303E-EVAL ## Backward Compatibility</p></li>
+<li><p>None</p></li>
+</ul>
+<h2 id="dependencies-14">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section2" aria-hidden="true"> <label for="collapse-section2" aria-hidden="true"><strong>V1.1.0 / 12-September-2014</strong></label>
+<div>
+<h1 id="maintenance-release-15">Maintenance release</h1>
+<h2 id="main-changes-15">Main Changes</h2>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated EWARM, MDK-ARM and TrueSTUDIO configurations to add stm32f3xx_hal_rcc_ex.c to the STM32F3xx_HAL_Driver group</li>
+<li><strong>USB_Device</strong>
+<ul>
+<li>HID_Standalone
+<ul>
+<li>Rename __HAL_USB_EXTI_SET_RISING_EGDE_TRIGGER() to __HAL_USB_EXTI_SET_RISING_EDGE_TRIGGER()</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32303E_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Do not override default device description file (IAR debugger configuration)</li>
+<li>Updated system_stm32f3xx.c (STM32F302xE and STM32F398xx devices handling)</li>
+<li>Deployment on MDK-ARM and TrueStudio IDEs</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Do not override default device description file (IAR debugger configuration)</li>
+<li>Updated system_stm32f3xx.c (STM32F302xE and STM32F398xx devices handling)</li>
+<li>Deployment on MDK-ARM and TrueStudio IDEs</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Do not override default device description file (IAR debugger configuration)</li>
+<li>Updated system_stm32f3xx.c (STM32F302xE and STM32F398xx devices handling)</li>
+<li>Deployment on MDK-ARM and TrueStudio IDEs</li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated EWARM, MDK-ARM and TrueSTUDIO configurations to add stm32f3xx_hal_rcc_ex.c to the STM32F3xx_HAL_Driver group</li>
+<li><strong>USB_Device</strong>
+<ul>
+<li>HID_Standalone
+<ul>
+<li>Rename __HAL_USB_EXTI_SET_RISING_EGDE_TRIGGER() to __HAL_USB_EXTI_SET_RISING_EDGE_TRIGGER()</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>General
+<ul>
+<li>Replaced all references to Cortex-M0+ by references to Cortex-M4</li>
+<li>Updated EWARM, MDK-ARM and TrueSTUDIO configurations to add stm32f3xx_hal_rcc_ex.c to the STM32F3xx_HAL_Driver group</li>
+</ul></li>
+<li>Cortex
+<ul>
+<li>CORTEXM_ModePrivilege
+<ul>
+<li>call __ISB() after calling __set_CONTROL()</li>
+</ul></li>
+</ul></li>
+<li>PWR
+<ul>
+<li>PWR_PVD
+<ul>
+<li>Fix compilation issue due to constants renaming</li>
+</ul></li>
+</ul></li>
+<li>RCC
+<ul>
+<li>RCC_ClockConfig
+<ul>
+<li>Fix assertion failure due to un-initialized HSICalibrationValue</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F3-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated EWARM, MDK-ARM and TrueSTUDIO configurations to add stm32f3xx_hal_rcc_ex.c to the STM32F3xx_HAL_Driver group</li>
+<li><strong>USB_Device</strong>
+<ul>
+<li>HID_Standalone
+<ul>
+<li>Rename __HAL_USB_EXTI_SET_RISING_EGDE_TRIGGER() to __HAL_USB_EXTI_SET_RISING_EDGE_TRIGGER()</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Update LEDs naming to be in line with changes done in STM32F3-Discovery board RevB:</li>
+<li>In STM32F3-Discovery board RevB, the LEDs were renamed vs. RevA as below:
+<ul>
+<li>LD7 renamed LD8</li>
+<li>LD3 renamed LD4</li>
+<li>LD8 renamed LD9</li>
+<li>LD9 renamed LD7</li>
+<li>LD4 renamed LD3</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>General
+<ul>
+<li>Replaced all references to Cortex-M0+ by references to Cortex-M4</li>
+<li>Updated EWARM, MDK-ARM and TrueSTUDIO configurations to add stm32f3xx_hal_rcc_ex.c to the STM32F3xx_HAL_Driver group</li>
+</ul></li>
+<li>Cortex
+<ul>
+<li>CORTEXM_ModePrivilege
+<ul>
+<li>call __ISB() after calling __set_CONTROL()</li>
+</ul></li>
+</ul></li>
+<li>PWR
+<ul>
+<li>PWR_PVD
+<ul>
+<li>Fix compilation issue due to constants renaming</li>
+</ul></li>
+</ul></li>
+<li>RCC
+<ul>
+<li>RCC_ClockConfig
+<ul>
+<li>Fix assertion failure due to un-initialized HSICalibrationValue</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated EWARM, MDK-ARM and TrueSTUDIO configurations to add stm32f3xx_hal_rcc_ex.c to the STM32F3xx_HAL_Driver group</li>
+<li><strong>USB_Device</strong>
+<ul>
+<li>HID_Standalone
+<ul>
+<li>Rename __HAL_USB_EXTI_SET_RISING_EGDE_TRIGGER() to __HAL_USB_EXTI_SET_RISING_EDGE_TRIGGER()</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>ADC
+<ul>
+<li>ADC_AnalogWatchdog: fixed TrueStudio build issue</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F303RE-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Do not override default device description file (IAR debugger configuration)</li>
+<li>Updated system_stm32f3xx.c (STM32F302xE and STM32F398xx devices handling)</li>
+<li>Deployment on MDK-ARM and TrueStudio IDEs</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Do not override default device description file (IAR debugger configuration)</li>
+<li>Updated system_stm32f3xx.c (STM32F302xE and STM32F398xx devices handling)</li>
+<li>Deployment on MDK-ARM and TrueStudio IDEs</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>General
+<ul>
+<li>Do not override default device description file (IAR debugger configuration)</li>
+<li>Updated system_stm32f3xx.c (STM32F302xE and STM32F398xx devices handling)</li>
+<li>Deployment on MDK-ARM and TrueStudio IDEs</li>
+<li>readme.txt updates</li>
+</ul></li>
+<li>ADC
+<ul>
+<li>ADC_Sequencer: ADC2 replaced by ADC1 and channel changed on pin PA.1 for temperature sensor</li>
+</ul></li>
+<li>COMP
+<ul>
+<li>COMP_Hygrometer: added a newline at the end of ...h</li>
+</ul></li>
+<li>FLASH
+<ul>
+<li>Flash_EraseProgram: Initialized all fields of RCC_OSCInitStruct prior calling HAL_RCC_OSCConfig()</li>
+</ul></li>
+<li>PWR
+<ul>
+<li>Modified the wakeup pin on PA0 for specific test case standby mode</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Do not override default device description file (IAR debugger configuration)</li>
+<li>Updated system_stm32f3xx.c (STM32F302xE and STM32F398xx devices handling)</li>
+<li>Deployment on MDK-ARM and TrueStudio IDEs</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3348-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Official release.</li>
+<li>Fixed TrueStudio build issue.</li>
+<li>Correction done in main.c to disable the DAC channel output.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>HRTIM
+<ul>
+<li>In all examples
+<ul>
+<li>Cleaner initialization of the hrtim structure before calling HAL_HRTIM_Init</li>
+<li>DMARequests explicitly disabled. All DMA parameters set with default values</li>
+<li>HRTIM_ClearHandle function removed (handle initialization done in HAL_HRTIM_Init function)</li>
+<li>Autodelayed parameters removed before setting compare1 and compare 3 values (useless)</li>
+<li>Outputs configuration structures renamed to be more explicit (eg. TD1 to TDx if it applies to 2 outputs)</li>
+<li>stm32f3xx_hal_msp.c file: HRTIM Clock initialisation updated (now using HAL library)</li>
+</ul></li>
+<li>HRTIM BasicPWM
+<ul>
+<li>HAL_ADC_MspInit function removed (ADC not used in this example)</li>
+</ul></li>
+<li>HRTIM_BuckSyncRect
+<ul>
+<li>Vin/Vout calculation formula corrected</li>
+<li>ADC Voltage reference voltage handled with #define ADC_VREF</li>
+<li>Bug fixed in ADC injection channel initialisation (conversion not starting)</li>
+<li>Snippet version added (can be enabled with #define SNIPPET)</li>
+</ul></li>
+<li>HRTIM_BuckBoost
+<ul>
+<li>Vin/Vout calculation formula corrected</li>
+<li>ADC Voltage reference voltage handled with #define ADC_VREF (replacing former #define VDDA)</li>
+</ul></li>
+<li>HRTIM_TM_PFC
+<ul>
+<li>Bug fixed for Fault monitoring: LED4 now flashing properly</li>
+<li>Bug fixed for autodelayed mode: capture now triggered on Over-current for correct Toff time management</li>
+<li>Snippet version added (can be enabled with #define SNIPPET)</li>
+</ul></li>
+<li>HRTIM_BuckBoost_AN4449
+<ul>
+<li>New example related to AN4449 Buck-boost converter ## Contents</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="projects">Projects</h3>
+<table>
+<caption>Projects STM32F3348-Discovery</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F3348-Discovery</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3348-Discovery/Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F3348-Discovery</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3348-Discovery/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F303RE-Nucleo</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F303RE-Nucleo</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F303RE-Nucleo/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F303RE-Nucleo</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F303RE-Nucleo/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F303RE-Nucleo</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F303RE-Nucleo/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F303RE-Nucleo</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F303RE-Nucleo/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F302R8-Nucleo</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F302R8-Nucleo</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F302R8-Nucleo/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F302R8-Nucleo</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F302R8-Nucleo/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F3-Discovery</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F3-Discovery</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3-Discovery/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F3-Discovery</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3-Discovery/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F3-Discovery</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3-Discovery/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32373C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32373C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32373C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32373C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32373C_EVAL/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32303E_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32303E_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32303E_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32303E_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32303E_EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32303E_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32303E_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32303C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32303C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32303C_EVAL/Applications</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories highlighted have changed since previous release.</p>
+<h2 id="known-limitations-15">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-15">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-15">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery RevB</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo RevC</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL RevB</li>
+</ul>
+<h2 id="backward-compatibility-14">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-15">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>V1.0.0 / 18-June-2014</strong></label>
+<div>
+<h1 id="maintenance-release-16">Maintenance release</h1>
+<h2 id="main-changes-16">Main Changes</h2>
+<ul>
+<li><strong>First official release of STM32CubeF3 (STM32Cube for STM32F3 Series)</strong></li>
+</ul>
+<p><strong>STM32F334R8-Nucleo</strong>: First official release</p>
+<p><strong>STM32F302R8-Nucleo</strong>: First official release</p>
+<p><strong>STM32373C_EVAL</strong>: First official release</p>
+<p><strong>STM32303C_EVAL</strong>: First official release</p>
+<p><strong>STM32F3348-Discovery</strong>: First official release</p>
+<p><strong>STM32F3-Discovery</strong>: First official release</p>
+<h2 id="contents">Contents</h2>
+<h3 id="projects-1">Projects</h3>
+<table>
+<caption>Projects STM32F334R8-Nucleo</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F334R8-Nucleo</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F334R8-Nucleo/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F334R8-Nucleo</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F334R8-Nucleo/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F334R8-Nucleo</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F334R8-Nucleo/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F334R8-Nucleo</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F334R8-Nucleo/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F302R8-Nucleo</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F302R8-Nucleo</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F302R8-Nucleo/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F302R8-Nucleo</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F302R8-Nucleo/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F302R8-Nucleo</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F302R8-Nucleo/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F302R8-Nucleo</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F302R8-Nucleo/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32303C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32303C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32303C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32303C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32303C_EVAL/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32303C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32303C_EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32303C_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32303C_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32373C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32373C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32373C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32373C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32373C_EVAL/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32373C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32373C_EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32373C_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32373C_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F3-Discovery</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F3-Discovery</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3-Discovery/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F3-Discovery</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3-Discovery/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F3-Discovery</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3-Discovery/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F3-Discovery</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3-Discovery/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F3348-Discovery</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F3348-Discovery</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3348-Discovery/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F3348-Discovery</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3348-Discovery/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F3348-Discovery</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3348-Discovery/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F3348-Discovery</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F3348-Discovery/Templates</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-16">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-16">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK
+<ul>
+<li>Software patches are needed to use STM32F302x8 and STM32F334x8 devices. If you do not have this patch installed, you can install it from the following folders _Software-ARM_STM32F302x8_Patch and _Software-ARM_STM32F334x8_Patch</li>
+</ul></li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.0.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-16">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F3x1, STM32F3x2, STM32F3x3, STM32F3x4 and STM32F3x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F3-Discovery (RevB), STM32F3348-Discovery RevB</li>
+<li>Nucleo boards: STM32F302R8-Nucleo, STM32F334R8-Nucleo RevC</li>
+<li>Evaluation boards: STM32303C-EVAL (RevC), STM32373C-EVAL RevB</li>
+</ul>
+<h2 id="backward-compatibility-15">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-16">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<p>For complete documentation on <mark>STM32 Microcontrollers</mark> , visit: <span style="font-color: blue;"><a href="http://www.st.com/STM32">www.st.com</a></span></p>
+<p>This release note uses up to date web standards and, for this reason, should not be opened with Internet Explorer but preferably with popular browsers such as Google Chrome, Mozilla Firefox, Opera or Microsoft Edge.</p>
+</footer>
+</body>
+</html>

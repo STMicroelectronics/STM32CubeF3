@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -49,7 +48,7 @@ ADC sampling rate calculation:
 
 ADC conversion results:
   ADC and DMA are configured to operate continuously, in circular mode: conversions results are updated continuoulsy.
-  ADC conversions results are transfered automatically by DMA, by half words every ADC1+ADC2 conversions.
+  ADC conversions results are transferred automatically by DMA, by half words every ADC1+ADC2 conversions.
   Array "aADCDualConvertedValue" contains both ADC results on 16 bits:
    - ADC master results in the 8 LSB [7:0]
    - ADC slave results in the 8 MSB [15:8]
@@ -100,5 +99,5 @@ In order to make the program work, you must do the following :
  - Rebuild all files and load your image into target memory
  - Run the example
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

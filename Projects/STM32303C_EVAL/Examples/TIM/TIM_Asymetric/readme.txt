@@ -1,21 +1,20 @@
 /**
-  @page TIM_Asymetric TIM asymetric example
+  @page TIM_Asymetric TIM asymmetric example
   
   @verbatim
   ******************** (C) COPYRIGHT 2016 STMicroelectronics *******************
   * @file    TIM/TIM_Asymetric/readme.txt 
   * @author  MCD Application Team
-  * @brief   TIM asymetric Example Description.
+  * @brief   TIM asymmetric Example Description.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -32,16 +31,16 @@ The pulse length and the phase shift are programmed consecutively in TIM8_CCR2 a
 TIM1 is configured to generating the reference signal on Channel1 used by TIM8:
    - TIM1 is generating a PWM signal with frequency equal to 1.6363 KHz.
    - TIM1 is used as master for TIM8, the update event of TIM1 genarates the Reset counter
-     of TIM8 to synchronize the two signals: the refernce signal (TIM1_CH1) and the shifted signal (TIM8_CH2). 
+     of TIM8 to synchronize the two signals: the reference signal (TIM1_CH1) and the shifted signal (TIM8_CH2). 
 
 In this example TIM1 and TIM8 input clock (TIM8CLK) is set to APB2 clock (PCLK2)    
 TIM1 and TIM8 signals are at frequency of  (SystemCoreClock / (Period + 1))  
                
 TIM8 is generating a signal with the following caracteristics:
-  - Pulse lenght = (TIM8_CCR1 + TIM8_CCR2) / TIM8_CLK
+  - Pulse length = (TIM8_CCR1 + TIM8_CCR2) / TIM8_CLK
   - Phase shift = TIM8_CCR2/TIM8_CLK
  with TIM8_CLK = (SystemCoreClock / (Period + 1)), as the prescaler is equal to zero. 
- The Pulse is low level of the output signal of Channel 2 because TIM cannel is configured as asymetric PWM2 mode.
+ The Pulse is low level of the output signal of Channel 2 because TIM cannel is configured as asymmetric PWM2 mode.
 
 @note Care must be taken when using HAL_Delay(), this function provides accurate delay (in milliseconds)
       based on variable incremented in SysTick ISR. This implies that if HAL_Delay() is called from
@@ -86,5 +85,5 @@ In order to make the program work, you must do the following :
  - Rebuild all files and load your image into target memory
  - Run the example
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -31,7 +30,7 @@ Other peripherals related to ADC are used:
 Mandatory:
  - GPIO peripheral is used in analog mode to drive signal from device pin to
    ADC input.
-Optionaly:
+Optionally:
  - DMA peripheral is used to transfer ADC conversions data.
 
 ADC settings:
@@ -39,9 +38,9 @@ ADC settings:
   mode, one by one at each conversion trig.
 
 ADC conversion results:
-  ADC conversions results are transfered automatically by DMA, into variable
+  ADC conversions results are transferred automatically by DMA, into variable
   array "aADCxConvertedValues".
-  Each adress of this array is containing the conversion data of 1 rank of the
+  Each address of this array is containing the conversion data of 1 rank of the
   ADC sequencer.
   When DMA transfer half-buffer and buffer length are reached, callbacks 
   HAL_ADC_ConvCpltCallback() and HAL_ADC_ConvCpltCallback() are called.
@@ -98,5 +97,5 @@ In order to make the program work, you must do the following :
  - Rebuild all files and load your image into target memory
  - Run the example
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

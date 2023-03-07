@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -86,7 +85,7 @@ Comparator output signal expected:
 
   - STM32303C-EVAL RevC Set-up
     - Connect TIM1 CH2 (PA9) to a scope and to the input trigger of a wave generator
-    - Connect the wave generator ouput to COMP1 Non Inverting input (PA1)
+    - Connect the wave generator output to COMP1 Non Inverting input (PA1)
     - Configure the wave generator to output a pulse at rising edge event with 
       high level greater than VREFINT (1.22V) and pulse duration lower 27.7 micro second
       (as an example you can use 10 micro second). 
@@ -101,5 +100,5 @@ In order to make the program work, you must do the following :
  - Rebuild all files and load your image into target memory
  - Run the example
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

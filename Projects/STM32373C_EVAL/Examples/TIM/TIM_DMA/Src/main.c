@@ -7,13 +7,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -77,7 +76,7 @@ int main(void)
   /* Configure the system clock to have a system clock = 72 Mhz */
   SystemClock_Config();
 
-  /* Compute the value of ARR regiter to generate signal frequency at 17.57 Khz */
+  /* Compute the value of ARR register to generate signal frequency at 17.57 Khz */
   uhTimerPeriod = (uint32_t) ((SystemCoreClock / 17570 ) - 1);
   /* Compute CCR1 value to generate a duty cycle at 75% */
   aCCValue_Buffer[0] = (uint32_t)(((uint32_t) 75 * (uhTimerPeriod - 1)) / 100);
@@ -104,7 +103,7 @@ int main(void)
   and a variable duty cycle that is changed by the DMA after a specific number of
   Update DMA request.
                                               
-  The number of this repetitive requests is defined by the TIM15 Repetion counter,
+  The number of this repetitive requests is defined by the TIM15 Repetition counter,
   each 4 Update Requests, the TIM15 Channel 1 Duty Cycle changes to the next new 
   value defined by the aCCValue_Buffer.
                   
@@ -255,5 +254,3 @@ void assert_failed(uint8_t* file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

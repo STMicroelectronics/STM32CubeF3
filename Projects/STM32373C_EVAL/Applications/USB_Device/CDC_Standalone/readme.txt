@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -71,7 +70,7 @@ download from www.st.com.
 @note The user has to check the list of the COM ports in Device Manager to find out the number of the
       COM ports that have been assigned (by OS) to the VCP interface.
 
-@note The build-in USB peripheral of the STM32F3x does not provide a specific interrupt for USB cable plug/unplug 
+@note The built-in USB peripheral of the STM32F3x does not provide a specific interrupt for USB cable plug/unplug 
       detection. The correct way to detect the USB cable plug/unplug is to detect the availability of the VBUS line
 	  using a normal GPIO pin (external interrupt line).
 	  
@@ -160,5 +159,5 @@ In order to make the program work, you must do the following:
  - Find out the number of the COM port assigned to the STM32 CDC device
  - Open a serial terminal application and start the communication
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

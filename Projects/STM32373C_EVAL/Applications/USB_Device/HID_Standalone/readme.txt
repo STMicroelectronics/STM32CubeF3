@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -67,7 +66,7 @@ User can select USB line Interrupt through macro defined in main.h.
       than the peripheral interrupt. Otherwise the caller ISR process will be blocked.
       To change the SysTick interrupt priority you have to use HAL_NVIC_SetPriority() function.
 
-@note The build-in USB peripheral of the STM32F3x does not provide a specific interrupt for USB cable plug/unplug 
+@note The built-in USB peripheral of the STM32F3x does not provide a specific interrupt for USB cable plug/unplug 
       detection. The correct way to detect the USB cable plug/unplug is to detect the availability of the VBUS line
 	  using a normal GPIO pin (external interrupt line).
 	  
@@ -104,6 +103,6 @@ In order to make the program work, you must do the following:
  - Rebuild all files and load your image into target memory
  - Run the example
  
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */
   

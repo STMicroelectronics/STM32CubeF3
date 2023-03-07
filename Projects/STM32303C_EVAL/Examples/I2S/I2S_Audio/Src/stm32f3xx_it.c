@@ -8,13 +8,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -158,7 +157,7 @@ void EXTI9_5_IRQHandler(void)
 {
   HAL_GPIO_EXTI_IRQHandler(UP_JOY_PIN);
   HAL_GPIO_EXTI_IRQHandler(DOWN_JOY_PIN);
-  /* Right and Left joystik buttons have no effect but their
+  /* Right and Left joystick buttons have no effect but their
     interrupts must be processed to be cleared in case the user
     accidentally presses them */
   HAL_GPIO_EXTI_IRQHandler(RIGHT_JOY_PIN);
@@ -172,7 +171,7 @@ void EXTI9_5_IRQHandler(void)
   */
 void EXTI15_10_IRQHandler(void)
 {
-    /* Similarly to Right and Left joystik buttons, Sel button has no effect 
+    /* Similarly to Right and Left joystick buttons, Sel button has no effect 
       but its interrupt must be processed to be cleared in case the user
       accidentally presses it */
   HAL_GPIO_EXTI_IRQHandler(SEL_JOY_PIN);  
@@ -195,5 +194,3 @@ void DMA2_Channel2_IRQHandler(void)
 /**
   * @}
   */ 
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

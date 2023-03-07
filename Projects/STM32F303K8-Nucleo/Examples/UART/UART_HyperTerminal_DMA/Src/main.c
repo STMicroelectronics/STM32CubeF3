@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -116,7 +115,7 @@ int main(void)
 
   /*##-4- Wait for the end of the transfer ###################################*/
   /*  Before starting a new communication transfer, you need to check the current
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it is busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -134,7 +133,7 @@ int main(void)
 
   /*##-6- Wait for the end of the transfer ###################################*/
   /*  Before starting a new communication transfer, you need to check the current
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it is busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -213,7 +212,7 @@ void SystemClock_Config(void)
   */
 static void Error_Handler(void)
 {
-  /* Toogle LED3 for error */
+  /* Toggle LED3 for error */
   while(1)
   {
     BSP_LED_Toggle(LED3);
@@ -230,7 +229,7 @@ static void Error_Handler(void)
   */
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
-  /* Toogle LED3 : Transfer in transmission process is correct */
+  /* Toggle LED3 : Transfer in transmission process is correct */
   BSP_LED_On(LED3);
 }
 
@@ -287,5 +286,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

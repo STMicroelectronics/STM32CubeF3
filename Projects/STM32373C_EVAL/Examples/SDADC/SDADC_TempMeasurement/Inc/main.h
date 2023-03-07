@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -49,7 +48,7 @@
 #define PT100_SDADC_IRQHandler  SDADC1_IRQHandler
 #define PT100_PWR_SDADC         PWR_SDADC_ANALOG1
 #define PT100_SDADC_VREF        SDADC_VREF_EXT /* External reference is selected */
-#define PT100_SDADC_GAIN        SDADC_GAIN_8   /* Internal gain 8 is seleted */
+#define PT100_SDADC_GAIN        SDADC_GAIN_8   /* Internal gain 8 is selected */
 #define SDADC_GAIN              (uint32_t)8    /* SDADC internal gain is set to 8: update this define
                                                  according to PT100_SDADC_GAIN */
 #define PT100_SDADC_CHANNEL     SDADC_CHANNEL_3
@@ -67,5 +66,3 @@
 void Error_Handler(void);
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

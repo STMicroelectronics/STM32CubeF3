@@ -7,13 +7,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -95,7 +94,7 @@ int main(void)
 
   while (1)
   {
-    /* Test if user an action occured on the Key push-button */
+    /* Test if user an action occurred on the Key push-button */
     if (UserButtonStatus == 1)
     {
       UserButtonStatus = 0;
@@ -195,7 +194,7 @@ static void DAC_Config(void)
     Error_Handler();
   }
 
-  /*##-2- Enable DAC Channel and associeted DMA ##############################*/
+  /*##-2- Enable DAC Channel and associated DMA ##############################*/
   if(HAL_DAC_Start_DMA(&DacHandle, DAC_CHANNEL_2, (uint32_t*)Sine12bit, 
                        sizeof (Sine12bit) / sizeof (uint32_t), 
                        DAC_ALIGN_12B_R) != HAL_OK)
@@ -320,5 +319,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

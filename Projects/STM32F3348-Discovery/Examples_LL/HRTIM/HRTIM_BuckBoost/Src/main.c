@@ -7,13 +7,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -349,7 +348,7 @@ static void HRTIM_Config(void)
 
   /*## DLL Calibration #######################################################*/
   
-  /* DLL calibration: periodic calibration enabled, period set to 14µs */
+  /* DLL calibration: periodic calibration enabled, period set to 14 Microseconds */
   LL_HRTIM_ConfigDLLCalibration(HRTIM1, 
                                 LL_HRTIM_DLLCALIBRATION_MODE_CONTINUOUS,
                                 LL_HRTIM_DLLCALIBRATION_RATE_14);
@@ -386,7 +385,7 @@ static void HRTIM_Config(void)
   LL_HRTIM_TIM_SetRepetition(HRTIM1,
                              LL_HRTIM_TIMER_A, 31);
   
-  /* TIMER A - set clock prescaling ratio to acheive the highest possible resolution */
+  /* TIMER A - set clock prescaling ratio to achieve the highest possible resolution */
   LL_HRTIM_TIM_SetPrescaler(HRTIM1,
                             LL_HRTIM_TIMER_A,
                             LL_HRTIM_PRESCALERRATIO_MUL32);
@@ -426,11 +425,11 @@ static void HRTIM_Config(void)
                          LL_HRTIM_TIMER_B,
                          BUCK_PWM_PERIOD);
   
-  /* TIMER B - 1 repetion event every 32 PWM periods */ 
+  /* TIMER B - 1 repetition event every 32 PWM periods */ 
   LL_HRTIM_TIM_SetRepetition(HRTIM1,
                              LL_HRTIM_TIMER_B, 31);
   
-  /* TIMER B - Set clock prescaling ratio to acheive the highest possible resolution */
+  /* TIMER B - Set clock prescaling ratio to achieve the highest possible resolution */
   LL_HRTIM_TIM_SetPrescaler(HRTIM1,
                             LL_HRTIM_TIMER_B,
                             LL_HRTIM_PRESCALERRATIO_MUL32);
@@ -1038,5 +1037,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

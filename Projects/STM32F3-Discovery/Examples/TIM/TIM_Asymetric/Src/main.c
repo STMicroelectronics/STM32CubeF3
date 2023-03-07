@@ -3,17 +3,16 @@
   * @file    TIM/TIM_Asymetric/Src/main.c
   * @author  MCD Application Team
   * @brief   This sample code shows how to use STM32F3xx TIM HAL API to generate
-  *          an asymetric signal.
+  *          an asymmetric signal.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -96,7 +95,7 @@ int main(void)
     TIM1 and TIM8 signals are at frequency of  (SystemCoreClock / (PWM_FREQUENCY + 1))  
        
     TIM8 is gerating a signal with the following caracteristics:
-    - Pulse lenght = (TIM8_CCR1 + TIM8_CCR2) / TIM8_CLK
+    - Pulse length = (TIM8_CCR1 + TIM8_CCR2) / TIM8_CLK
     - Phase shift = TIM8_CCR1/TIM8_CLK
       with TIM8_CLK = (SystemCoreClock / (Period + 1)), as the prescaler is equal to zero.
   
@@ -316,5 +315,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -253,7 +252,7 @@ static void AudioPlay_SetHint(void)
 
 /**
   * @brief  Display audio play demo hint
-  * @param  format : structure containing informations of the file
+  * @param  format : structure containing information of the file
   * @retval None
   */
 static void AudioPlay_DisplayInfos(WAVE_FormatTypeDef * format)
@@ -349,4 +348,3 @@ void BSP_AUDIO_OUT_Error_CallBack(void)
 /**
   * @}
   */ 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -7,13 +7,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -274,7 +273,7 @@ static void HRTIM_Config(void)
   HAL_HRTIM_TimeBaseConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_A, &timebase_config);
 
   /* Timer B is managed differently, so that TIMERB period event can serve as */
-  /* ADC trigger (to optimize timer's ressources). TimerBPeriod event is used */
+  /* ADC trigger (to optimize timer's resources). TimerBPeriod event is used */
   /* as 4th sampling point for SR1 monitoring */
   /* Period event is used ampling after turn-off on SR1 */
   timebase_config.Period = (35 * LLC_PWM_PERIOD)/100 + ADC_CONVERSION_TIME;
@@ -282,7 +281,7 @@ static void HRTIM_Config(void)
   HAL_HRTIM_TimeBaseConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, &timebase_config);
   
   /* Timer C is managed differently, so that TIMERC period event can serve as */
-  /* ADC trigger (to optimize timer's ressources). TimerCPeriod event is used */
+  /* ADC trigger (to optimize timer's resources). TimerCPeriod event is used */
   /* as 4th sampling point for SR2 monitoring */
   timebase_config.Period = (85 * LLC_PWM_PERIOD)/100 + ADC_CONVERSION_TIME;
   timebase_config.Mode = HRTIM_MODE_SINGLESHOT_RETRIGGERABLE;
@@ -909,5 +908,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
