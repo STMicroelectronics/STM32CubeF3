@@ -38,3 +38,71 @@
 	path = Drivers/BSP/STM32373C_EVAL
 	url = https://github.com/STMicroelectronics/stm32373c-eval-bsp.git
 	branch = main
+[submodule "Drivers/BSP/Components/Common"]
+	path = Drivers/BSP/Components/Common
+	url = https://github.com/STMicroelectronics/stm32-bsp-Common
+	branch = main
+[submodule "Drivers/BSP/Components/cs43l22"]
+	path = Drivers/BSP/Components/cs43l22
+	url = https://github.com/STMicroelectronics/stm32-cs43l22
+	branch = main
+[submodule "Drivers/BSP/Components/hx8347g"]
+	path = Drivers/BSP/Components/hx8347g
+	url = https://github.com/STMicroelectronics/stm32-hx8347g
+	branch = main
+[submodule "Drivers/BSP/Components/i3g4250d"]
+	path = Drivers/BSP/Components/i3g4250d
+	url = https://github.com/STMicroelectronics/stm32-i3g4250d
+	branch = main
+[submodule "Drivers/BSP/Components/ili9325"]
+	path = Drivers/BSP/Components/ili9325
+	url = https://github.com/STMicroelectronics/stm32-ili9325
+	branch = main
+[submodule "Drivers/BSP/Components/l3gd20"]
+	path = Drivers/BSP/Components/l3gd20
+	url = https://github.com/STMicroelectronics/stm32-l3gd20
+	branch = main
+[submodule "Drivers/BSP/Components/lsm303dlhc"]
+	path = Drivers/BSP/Components/lsm303dlhc
+	url = https://github.com/STMicroelectronics/stm32-lsm303dlhc
+	branch = main
+[submodule "Drivers/BSP/Components/st7735"]
+	path = Drivers/BSP/Components/st7735
+	url = https://github.com/STMicroelectronics/stm32-st7735
+	branch = main
+[submodule "Drivers/BSP/Components/stts751"]
+	path = Drivers/BSP/Components/stts751
+	url = https://github.com/STMicroelectronics/stm32-stts751
+	branch = main
+[submodule "Drivers/BSP/Components/hx8347d"]
+	path = Drivers/BSP/Components/hx8347d
+	url = https://github.com/STMicroelectronics/stm32-hx8347d
+	branch = main
+[submodule "Drivers/BSP/Components/cs42l52"]
+	path = Drivers/BSP/Components/cs42l52
+	url = https://github.com/STMicroelectronics/stm32-cs42l52
+	branch = main
+[submodule "Drivers/BSP/Components/hx8347i"]
+	path = Drivers/BSP/Components/hx8347i
+	url = https://github.com/STMicroelectronics/stm32-hx8347i
+	branch = main
+[submodule "Drivers/BSP/Components/ili9320"]
+	path = Drivers/BSP/Components/ili9320
+	url = https://github.com/STMicroelectronics/stm32-ili9320
+	branch = main
+[submodule "Drivers/BSP/Components/ili9328"]
+	path = Drivers/BSP/Components/ili9328
+	url = https://github.com/STMicroelectronics/stm32-ili9328
+	branch = main
+[submodule "Drivers/BSP/Components/lsm303agr"]
+	path = Drivers/BSP/Components/lsm303agr
+	url = https://github.com/STMicroelectronics/stm32-lsm303agr
+	branch = main
+[submodule "Drivers/BSP/Components/spfd5408"]
+	path = Drivers/BSP/Components/spfd5408
+	url = https://github.com/STMicroelectronics/stm32-spfd5408
+	branch = main
+[submodule "Drivers/BSP/Components/stlm75"]
+	path = Drivers/BSP/Components/stlm75
+	url = https://github.com/STMicroelectronics/stm32-stlm75
+	branch = main
