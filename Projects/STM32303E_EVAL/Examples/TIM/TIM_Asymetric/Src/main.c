@@ -36,7 +36,8 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Timer handler declaration */
-TIM_HandleTypeDef    TimHandle;
+TIM_HandleTypeDef    TimHandle8;
+TIM_HandleTypeDef    TimHandle1;
 
 /* Timer Output Compare Configuration Structure declaration */
 TIM_OC_InitTypeDef sConfig;
@@ -78,10 +79,10 @@ int main(void)
 
   /*##-1- Configure the TIM peripheral #######################################*/ 
   /* --------------------------------------------------------------------------- 
-     TIM8 is configured to generate an Asymetric signal with a programmable 
+     TIM8 is configured to generate an Asymmetric signal with a programmable 
    Phase-Shifted signal on TIM8_CH2:
    - TIM8 Channel 1 is configured in PWM2 mode
-   - TIM8 Channel 2 is configured in Asymetric PWM2 mode
+   - TIM8 Channel 2 is configured in Asymmetric PWM2 mode
    - The counter mode is center aligned mode
    - The pulse length and the phase shift are programmed consecutively in TIM8_CCR2 and TIM8_CCR1.
     
@@ -109,26 +110,26 @@ int main(void)
       3) each time HAL_RCC_ClockConfig() is called to configure the system clock frequency     
   --------------------------------------------------------------------------- */
   /* Initialize Timers: TIM1 & TIM8 */  
-  TimHandle.Instance = TIM1;
-  TimHandle.Init.Prescaler         = 0;
-  TimHandle.Init.Period            = 2 * PWM_FREQUENCY;
-  TimHandle.Init.ClockDivision     = 0;
-  TimHandle.Init.CounterMode       = TIM_COUNTERMODE_UP;
-  TimHandle.Init.RepetitionCounter = 0;
-  TimHandle.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if(HAL_TIM_PWM_Init(&TimHandle) != HAL_OK)
+  TimHandle1.Instance = TIM1;
+  TimHandle1.Init.Prescaler         = 0;
+  TimHandle1.Init.Period            = 2 * PWM_FREQUENCY;
+  TimHandle1.Init.ClockDivision     = 0;
+  TimHandle1.Init.CounterMode       = TIM_COUNTERMODE_UP;
+  TimHandle1.Init.RepetitionCounter = 0;
+  TimHandle1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if(HAL_TIM_PWM_Init(&TimHandle1) != HAL_OK)
   {
     /* Initialization Error */
     Error_Handler();
   }
-  TimHandle.Instance = TIM8;
-  TimHandle.Init.Prescaler         = 0;
-  TimHandle.Init.Period            = PWM_FREQUENCY;
-  TimHandle.Init.ClockDivision     = 0;
-  TimHandle.Init.CounterMode       = TIM_COUNTERMODE_CENTERALIGNED1;
-  TimHandle.Init.RepetitionCounter = 0;
-  TimHandle.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if(HAL_TIM_PWM_Init(&TimHandle) != HAL_OK)
+  TimHandle8.Instance = TIM8;
+  TimHandle8.Init.Prescaler         = 0;
+  TimHandle8.Init.Period            = PWM_FREQUENCY;
+  TimHandle8.Init.ClockDivision     = 0;
+  TimHandle8.Init.CounterMode       = TIM_COUNTERMODE_CENTERALIGNED1;
+  TimHandle8.Init.RepetitionCounter = 0;
+  TimHandle8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if(HAL_TIM_PWM_Init(&TimHandle8) != HAL_OK)
   {
     /* Initialization Error */
     Error_Handler();
@@ -136,7 +137,7 @@ int main(void)
 
   /*##-2- Configure the PWM channels #########################################*/ 
   /* Channels 1&2 configuration on TIM8 */
-  TimHandle.Instance = TIM8;
+  TimHandle8.Instance = TIM8;
   sConfig.OCMode = TIM_OCMODE_PWM2;
   sConfig.Pulse = INITIAL_PHASE;
   sConfig.OCPolarity = TIM_OCPOLARITY_HIGH;
@@ -144,24 +145,24 @@ int main(void)
   sConfig.OCFastMode = TIM_OCFAST_DISABLE;
   sConfig.OCIdleState = TIM_OCIDLESTATE_RESET;
   sConfig.OCNIdleState = TIM_OCNIDLESTATE_RESET;
-  if(HAL_TIM_PWM_ConfigChannel(&TimHandle, &sConfig, TIM_CHANNEL_1) != HAL_OK)
+  if(HAL_TIM_PWM_ConfigChannel(&TimHandle8, &sConfig, TIM_CHANNEL_1) != HAL_OK)
   {
     /* Configuration Error */
     Error_Handler();
   }
   sConfig.OCMode = TIM_OCMODE_ASSYMETRIC_PWM2;
   sConfig.Pulse = INITIAL_LENGTH;
-  if(HAL_TIM_PWM_ConfigChannel(&TimHandle, &sConfig, TIM_CHANNEL_2) != HAL_OK)
+  if(HAL_TIM_PWM_ConfigChannel(&TimHandle8, &sConfig, TIM_CHANNEL_2) != HAL_OK)
   {
     /* Configuration Error */
     Error_Handler();
   }
   
   /* Channel1 configuration on TIM1 */
-  TimHandle.Instance = TIM1;
+  TimHandle1.Instance = TIM1;
   sConfig.OCMode = TIM_OCMODE_PWM1;
   sConfig.Pulse = PWM_FREQUENCY;
-  if(HAL_TIM_PWM_ConfigChannel(&TimHandle, &sConfig, TIM_CHANNEL_1) != HAL_OK)
+  if(HAL_TIM_PWM_ConfigChannel(&TimHandle1, &sConfig, TIM_CHANNEL_1) != HAL_OK)
   {
     /* Configuration Error */
     Error_Handler();
@@ -174,23 +175,23 @@ int main(void)
   signal */
   /* Configure TIM8 in slave mode: an active edge on  trigger input generates a 
   reset on TIM8 */
-  TimHandle.Instance = TIM8;
+  TimHandle8.Instance = TIM8;
   sSlaveConfig.SlaveMode        = TIM_SLAVEMODE_RESET;
   sSlaveConfig.InputTrigger     = TIM_TS_ITR0;
   sSlaveConfig.TriggerPolarity  = TIM_TRIGGERPOLARITY_NONINVERTED;
   sSlaveConfig.TriggerPrescaler = TIM_TRIGGERPRESCALER_DIV1;
   sSlaveConfig.TriggerFilter    = 0;
-  if(HAL_TIM_SlaveConfigSynchro(&TimHandle, &sSlaveConfig) != HAL_OK)
+  if(HAL_TIM_SlaveConfigSynchro(&TimHandle8, &sSlaveConfig) != HAL_OK)
   {
     /* Configuration Error */
     Error_Handler();
   }
   /* Configure TIM1 in master mode */
-  TimHandle.Instance = TIM1;
+  TimHandle1.Instance = TIM1;
   sMasterConfig.MasterOutputTrigger  = TIM_TRGO_UPDATE;
   sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
   sMasterConfig.MasterSlaveMode      = TIM_MASTERSLAVEMODE_DISABLE;
-  if(HAL_TIMEx_MasterConfigSynchronization(&TimHandle, &sMasterConfig) != HAL_OK)
+  if(HAL_TIMEx_MasterConfigSynchronization(&TimHandle1, &sMasterConfig) != HAL_OK)
   {
     /* Configuration Error */
     Error_Handler();
@@ -198,22 +199,19 @@ int main(void)
   
   /*##-4- Start PWM signals generation #######################################*/ 
   /* Start TIM1 channel 1 */
-  TimHandle.Instance = TIM1;
-  if(HAL_TIM_PWM_Start(&TimHandle, TIM_CHANNEL_1) != HAL_OK)
+  if(HAL_TIM_PWM_Start(&TimHandle1, TIM_CHANNEL_1) != HAL_OK)
   {
     /* PWM Generation Error */
     Error_Handler();
   }
   /* Start TIM8 channel 1 */
-  TimHandle.Instance = TIM8;
-  if(HAL_TIM_PWM_Start(&TimHandle, TIM_CHANNEL_1) != HAL_OK)
+  if(HAL_TIM_PWM_Start(&TimHandle8, TIM_CHANNEL_1) != HAL_OK)
   {
     /* PWM Generation Error */
     Error_Handler();
   }
   /* Start TIM8 channel 2 */
-  TimHandle.Instance = TIM8;
-  if(HAL_TIM_PWM_Start(&TimHandle, TIM_CHANNEL_2) != HAL_OK)
+  if(HAL_TIM_PWM_Start(&TimHandle8, TIM_CHANNEL_2) != HAL_OK)
   {
     /* PWM Generation Error */
     Error_Handler();

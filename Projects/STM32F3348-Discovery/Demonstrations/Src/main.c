@@ -986,7 +986,7 @@ static void TestProgram(void)
   /* Initialize User_Button on STM32F3348-DISCO */
   BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
     
-  /* HRTIM intialisation startup */  
+  /* HRTIM initialisation startup */  
   HrtimHandle.Instance = HRTIM1;
   if(HAL_HRTIM_DLLCalibrationStart(&HrtimHandle, HRTIM_CALIBRATIONRATE_14) != HAL_OK)
   {

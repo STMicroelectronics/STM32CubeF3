@@ -180,7 +180,7 @@ int main(void)
       break;
 
     case FAULT:
-      /* If fault is triggered, operation acn be re-started with the push-button */
+      /* If fault is triggered, operation can be re-started with the push-button */
       if((BSP_PB_GetState(BUTTON_USER) == SET))
       {
         __HAL_HRTIM_CLEAR_IT(&hhrtim, HRTIM_IT_FLT1);
@@ -400,7 +400,7 @@ static void HRTIM_Config(void)
   HAL_HRTIM_DeadTimeConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, &HRTIM_TIM_DeadTimeConfig);
 
   /* ------------------------------------------- */
-  /* ADC trigger intialization (with CMP2 event) */
+  /* ADC trigger initialization (with CMP2 event) */
   /* ------------------------------------------- */
   compare_config.AutoDelayedMode = HRTIM_AUTODELAYEDMODE_REGULAR;
   compare_config.CompareValue = BUCK_PWM_PERIOD/2; /* Samples at 50% of period */

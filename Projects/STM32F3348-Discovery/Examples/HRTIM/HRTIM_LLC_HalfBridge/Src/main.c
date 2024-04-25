@@ -519,7 +519,7 @@ static void HRTIM_Config(void)
                                   &compare_config);
 
   /* ------------------------------------------- */
-  /* ADC1 trigger intialization (with 4 event)   */
+  /* ADC1 trigger initialization (with 4 event)   */
   /* 4 injected events for SR1 monitoring        */
   /* ------------------------------------------- */
   adc_trigger_config.Trigger = HRTIM_ADCTRIGGEREVENT24_TIMERB_CMP3 
@@ -533,7 +533,7 @@ static void HRTIM_Config(void)
                              &adc_trigger_config);
 
   /* ------------------------------------------- */
-  /* ADC2 trigger intialization (with 4 event)   */
+  /* ADC2 trigger initialization (with 4 event)   */
   /* 4 injected events for SR2 monitoring        */
   /* ------------------------------------------- */
   adc_trigger_config.Trigger = HRTIM_ADCTRIGGEREVENT24_TIMERC_CMP2 

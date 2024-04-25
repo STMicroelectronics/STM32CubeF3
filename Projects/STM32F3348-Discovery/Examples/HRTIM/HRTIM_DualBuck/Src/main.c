@@ -270,7 +270,7 @@ static void HRTIM_Config(void)
 
 
   /* --------------------------------------------------- */
-  /* ADC trigger intialization (CMP3 and CMP4 registers) */
+  /* ADC trigger initialization (CMP3 and CMP4 registers) */
   /* --------------------------------------------------- */
   /* Set compare 3 registers for 1st ADC trigger */
   compare_config.CompareValue = BUCK_PWM_PERIOD/10; // samples in middle of duty cycle (NB: from CMP2 to period)

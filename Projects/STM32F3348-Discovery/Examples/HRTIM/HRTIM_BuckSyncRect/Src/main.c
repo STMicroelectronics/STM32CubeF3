@@ -312,7 +312,7 @@ static void HRTIM_Config(void)
   HAL_HRTIM_DeadTimeConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_A, &HRTIM_TIM_DeadTimeConfig);
 
   /* ------------------------------------------- */
-  /* ADC trigger intialization (with CMP2 event) */
+  /* ADC trigger initialization (with CMP2 event) */
   /* ------------------------------------------- */
   compare_config.AutoDelayedMode = HRTIM_AUTODELAYEDMODE_REGULAR;
   compare_config.AutoDelayedTimeout = 0;
@@ -431,7 +431,7 @@ static void HRTIM_Config_NoHAL(void)
   HRTIM1->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_A].DTxR = HRTIM_DTR_DTFSLK + (DT_FALLING<<16) + HRTIM_DTR_DTRSLK + DT_RISING;
   
   /* ------------------------------------------- */
-  /* ADC trigger intialization (with CMP2 event) */
+  /* ADC trigger initialization (with CMP2 event) */
   /* ------------------------------------------- */
   HRTIM1->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_A].CMP2xR = BUCK_PWM_PERIOD/10;    /* Samples in middle of ON time */
   HRTIM1->sCommonRegs.CR1 = HRTIM_CR1_ADC2USRC_0; /* ADC trigger update: TimerA */

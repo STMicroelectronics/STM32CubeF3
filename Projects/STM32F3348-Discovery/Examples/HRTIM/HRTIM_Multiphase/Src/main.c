@@ -501,7 +501,7 @@ static void HRTIM_Config_NoHAL(void)
   /* -------------------------------------------------- */
   /* Burst mode configuration for light load management */
   /* Trigger is master reset/roll-over event            */
-  /* Preload enabled, continous mode                    */
+  /* Preload enabled, continuous mode                    */
   /* -------------------------------------------------- */ 
   HRTIM1->sCommonRegs.BMCR = HRIM_BURSTMODEPRELOAD_ENABLED + HRTIM_BURSTMODE_CONTINOUS;
   HRTIM1->sCommonRegs.BMTRGR = HRTIM_BURSTMODETRIGGER_MASTER_RESET;
@@ -509,7 +509,7 @@ static void HRTIM_Config_NoHAL(void)
   HRTIM1->sCommonRegs.BMCMPR = BURST_IDLE;      /* burst mode compare value */
   
   /* ------------------------------------------- */
-  /* ADC trigger intialization (with CMP2 event) */
+  /* ADC trigger initialization (with CMP2 event) */
   /* ------------------------------------------- */
   /* Default sampling points for 5-phase configuration */
   HRTIM1->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_A].CMP2xR = DUTY_CYCLE_INIT/2; /* Samples at 50% of Ton time */
@@ -802,7 +802,7 @@ static void HRTIM_Config(void)
   HAL_HRTIM_BurstModeConfig(&hhrtim, &burst_config);
 
   /* -------------------------------------------------------------- */
-  /* ADC trigger intialization (inc. for phase shedding management) */
+  /* ADC trigger initialization (inc. for phase shedding management) */
   /* -------------------------------------------------------------- */
   compare_config.AutoDelayedMode = HRTIM_AUTODELAYEDMODE_REGULAR;
   compare_config.CompareValue = DUTY_CYCLE_INIT/2; /* Samples at 50% of Ton time */

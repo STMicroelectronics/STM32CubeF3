@@ -342,7 +342,7 @@ static void HRTIM_Config(void)
   HAL_HRTIM_DeadTimeConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_B, &HRTIM_TIM_DeadTimeConfig);
 
   /* ------------------------------------------- */
-  /* ADC trigger intialization (with CMP2 event) */
+  /* ADC trigger initialization (with CMP2 event) */
   /* ------------------------------------------- */
   compare_config.CompareValue = BUCK_PWM_PERIOD / 8 ; /* Set default ADC trigger event */
   HAL_HRTIM_WaveformCompareConfig(&hhrtim, HRTIM_TIMERINDEX_TIMER_A, HRTIM_COMPAREUNIT_4, &compare_config);
@@ -698,7 +698,7 @@ static void Vout_Check(void)
   VoutT = (VoutT * 0x1000) / REAL_3V3; /* converted to 12-bit ADC full range with practical 3.3V of application */
   /* Check where is located VOUT_TARGET (VoutRange will be used as protection table index) */
   VoutRange = VOUT_TARGET / 1000;
-  /* Check for non interger value set for VOUT_TARGET */
+  /* Check for non integer value set for VOUT_TARGET */
   VoutDelta = VOUT_TARGET - (VoutRange * 1000);
   /* Compute factors for linear interpolation based on VOUT_TARGET settings */
   if (VoutDelta != 0 && VoutRange < 15)

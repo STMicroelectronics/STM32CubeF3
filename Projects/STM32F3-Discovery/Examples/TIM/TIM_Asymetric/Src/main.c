@@ -78,10 +78,10 @@ int main(void)
 
   /*##-1- Configure the TIM peripheral #######################################*/ 
   /* --------------------------------------------------------------------------- 
-     TIM8 is configured to generate an Asymetric signal with a programmable 
+     TIM8 is configured to generate an Asymmetric signal with a programmable 
    Phase-Shifted signal on TIM8_CH2:
    - TIM8 Channel 1 is configured in PWM2 mode
-   - TIM8 Channel 2 is configured in Asymetric PWM2 mode
+   - TIM8 Channel 2 is configured in Asymmetric PWM2 mode
    - The counter mode is center aligned mode
    - The pulse length and the phase shift are programmed consecutively in TIM8_CCR2 and TIM8_CCR1.
     

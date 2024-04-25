@@ -617,7 +617,7 @@ static void HRTIM_Config_MasterPWM(void)
   /* MASTER TIMER initialization: set PWM frequency and continuous mode  */
   /* The frequency difference is very low to show that the 2 signals are */
   /* not synchronous                                                     */
-  /* Note: Timer D init struture is re-used                              */
+  /* Note: Timer D init structure is re-used                              */
   /* ------------------------------------------------------------------- */
   timebase_config.Period = _100KHz_Plus_PERIOD;
   HAL_HRTIM_TimeBaseConfig(&hhrtim, HRTIM_TIMERINDEX_MASTER, &timebase_config);
