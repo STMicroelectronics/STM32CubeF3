@@ -20,4 +20,3 @@
 | STemWin                         | ST SLA0044           | STMicroelectronics |
 | STM32 Projects                  | ST SLA0044 (BSD-3-Clause for basic Examples) | STMicroelectronics |
 | STM32 Utilities                 | BSD-3-Clause         | STMicroelectronics |
-

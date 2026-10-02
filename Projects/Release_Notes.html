@@ -60,12 +60,76 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section17" checked aria-hidden="true"> <label for="collapse-section17" aria-hidden="true"><strong>V1.11.6 / 12-February-2026</strong></label>
+<input type="checkbox" id="collapse-section1_12_0" checked aria-hidden="true"> <label for="collapse-section1_12_0" aria-hidden="true"><strong>V1.12.0 / 19-September-2026</strong></label>
 <div>
 <h1 id="maintenance-release">Maintenance release</h1>
 <h2 id="main-changes">Main Changes</h2>
 <ul>
-<li>Update license on SW4STM32 linker files.</li>
+<li>General updates to fix known defects and implement enhancements.</li>
+<li><strong>STM32F302R8-Nucleo</strong> / <strong>STM32F303RE-Nucleo</strong> / <strong>STM32F303ZE-Nucleo</strong>/ <strong>STM32F334R8-Nucleo</strong>:
+<ul>
+<li>Add NEW GPIO_Demo Project : LED Blinking at Different Speeds with Button Control.</li>
+</ul></li>
+<li><strong>STM32303C_EVAL</strong> / <strong>STM32303E_EVAL</strong> / <strong>STM32373C_EVAL</strong> / <strong>STM32F302R8-Nucleo</strong> / <strong>STM32F303RE-Nucleo</strong> / <strong>STM32F303ZE-Nucleo</strong> / <strong>STM32F3-Discovery</strong>
+<ul>
+<li>Move USB Device projects to tag 2.11.6.</li>
+</ul></li>
+</ul>
+<p><strong>STM32303C_EVAL</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Implement USBD_memset and USBD_memcpy in the CDC standalone application.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Fix the incorrect check on HAL_TIMEOUT in the I2C EEPROM example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32303E_EVAL</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Correct cross-toolchain memory map inconsistencies in the IAP binary template linker configurations.</li>
+<li>Correct typo and remove ambiguity from comment in MutexHighPriorityThreadr() of FreeRTOS_Mutexes application.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Fix the PWM generation error in the TIM asymmetric example.</li>
+<li>Fix the incorrect check on HAL_TIMEOUT in the I2C EEPROM example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32373C_EVAL</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Implement USBD_memset and USBD_memcpy using standard C library functions in the CDC standalone application.</li>
+<li>Correct cross-toolchain memory map inconsistencies in the IAP binary template linker configurations.</li>
+<li>Correct typo and remove ambiguity from comment in MutexHighPriorityThreadr() of FreeRTOS_Mutexes application.</li>
+<li>Add the EWARM project configuration required to resolve the TouchSensing Linear IT flashing issue.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Fix the incorrect check on HAL_TIMEOUT in the I2C EEPROM example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F302R8-Nucleo</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Correct cross-toolchain memory map inconsistencies in the ADC Analog Watchdog linker configuration.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F3348-Discovery</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Correct cross-toolchain memory map inconsistencies in the HRTIM linker configurations.</li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Correct cross-toolchain memory map inconsistencies in the linker configuration.</li>
+</ul></li>
 </ul>
 </div>
 </div>

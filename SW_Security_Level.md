@@ -11,7 +11,7 @@
 
 | SW                                | SW Security Level
 |:---------                         |:-------|
-| **Software package name**         | Low|
+| **STM32CubeF3**                   | Low|
 
 
 <BR>
